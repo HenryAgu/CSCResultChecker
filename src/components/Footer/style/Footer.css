@@ -1,0 +1,13 @@
+/* DM Sans Google Font Link */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+footer{
+    width: 100%;
+    padding: 20px 0;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: #111111;
+    color: #ffffff !important;
+    font-family: 'DM Sans', sans-serif;
+    text-align: center;
+}
