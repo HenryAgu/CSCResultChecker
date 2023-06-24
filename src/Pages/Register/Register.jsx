@@ -27,12 +27,8 @@ const Register = () => {
           <input type="email" placeholder="Enter School Email" required />
         </div>
         <div className="inner_form">
-          <label htmlFor="">Password</label>
-          <input type="password" placeholder="Enter Password" required />
-        </div>
-        <div className="inner_form">
-          <label htmlFor="">Confirm Password</label>
-          <input type="password" placeholder="Enter Password" required />
+          <label htmlFor="">Year Of Enrollment</label>
+          <input type="number" placeholder="Enrollment Year" required />
         </div>
         <button>Register</button>
       </form>
