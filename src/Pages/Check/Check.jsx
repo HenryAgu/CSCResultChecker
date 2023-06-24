@@ -16,7 +16,35 @@ const Check = () => {
   const [hide, setHide] = useState(false);
 
   // Result data
-  const yearone = [
+
+  // year one first semester
+  const yearOneFirst = [
+    { id: 1, course: "csc 180.1", score: 95, grade: "A" },
+    { id: 2, course: "ges 100.1", score: 30, grade: "A" },
+    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
+  ];
+
+    // year one second semester
+    const yearOneSecond = [
+      { id: 1, course: "csc 180.1", score: 95, grade: "A" },
+      { id: 2, course: "ges 100.1", score: 30, grade: "A" },
+      { id: 3, course: "ges 103.1", score: 35, grade: "A" },
+      { id: 3, course: "ges 102.1", score: 35, grade: "A" },
+      { id: 3, course: "ges 102.1", score: 35, grade: "A" },
+      { id: 3, course: "ges 102.1", score: 35, grade: "A" },
+      { id: 3, course: "ges 102.1", score: 35, grade: "A" },
+      { id: 3, course: "ges 102.1", score: 35, grade: "A" },
+      { id: 3, course: "ges 102.1", score: 35, grade: "A" },
+    ];
+
+  // year two first semester
+  const yearTwoFirst = [
     { id: 1, course: "csc 180.1", score: 25, grade: "A" },
     { id: 2, course: "ges 100.1", score: 30, grade: "A" },
     { id: 3, course: "ges 102.1", score: 35, grade: "A" },
@@ -28,7 +56,47 @@ const Check = () => {
     { id: 3, course: "ges 102.1", score: 35, grade: "A" },
   ];
 
-  const yeartwo = [
+    // year two second semester
+    const yearTwoSecond = [
+      { id: 1, course: "csc 180.1", score: 25, grade: "A" },
+      { id: 2, course: "ges 100.1", score: 30, grade: "A" },
+      { id: 3, course: "ges 102.1", score: 35, grade: "A" },
+      { id: 3, course: "ges 102.1", score: 35, grade: "A" },
+      { id: 3, course: "ges 102.1", score: 35, grade: "A" },
+      { id: 3, course: "ges 102.1", score: 35, grade: "A" },
+      { id: 3, course: "ges 102.1", score: 35, grade: "A" },
+      { id: 3, course: "ges 102.1", score: 35, grade: "A" },
+      { id: 3, course: "ges 102.1", score: 35, grade: "A" },
+    ];
+
+    // Year Three first semester
+  const yearThreeFirst = [
+    { id: 1, course: "csc 180.1", score: 75, grade: "A" },
+    { id: 2, course: "ges 100.1", score: 30, grade: "A" },
+    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
+  ];
+
+      // Year Three second semester
+      const yearThreeSecond = [
+        { id: 1, course: "csc 180.1", score: 75, grade: "A" },
+        { id: 2, course: "ges 100.1", score: 30, grade: "A" },
+        { id: 3, course: "ges 102.1", score: 35, grade: "A" },
+        { id: 3, course: "ges 102.1", score: 35, grade: "A" },
+        { id: 3, course: "ges 102.1", score: 35, grade: "A" },
+        { id: 3, course: "ges 102.1", score: 35, grade: "A" },
+        { id: 3, course: "ges 102.1", score: 35, grade: "A" },
+        { id: 3, course: "ges 102.1", score: 35, grade: "A" },
+        { id: 3, course: "ges 102.1", score: 35, grade: "A" },
+      ];
+
+// year four first semester
+  const yearFourFirst = [
     { id: 1, course: "csc 180.1", score: 25, grade: "A" },
     { id: 2, course: "ges 100.1", score: 30, grade: "A" },
     { id: 3, course: "ges 102.1", score: 35, grade: "A" },
@@ -40,19 +108,8 @@ const Check = () => {
     { id: 3, course: "ges 102.1", score: 35, grade: "A" },
   ];
 
-  const yearthree = [
-    { id: 1, course: "csc 180.1", score: 25, grade: "A" },
-    { id: 2, course: "ges 100.1", score: 30, grade: "A" },
-    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-  ];
-
-  const yearfour = [
+  // year four second semester
+  const yearFourSecond = [
     { id: 1, course: "csc 180.1", score: 25, grade: "A" },
     { id: 2, course: "ges 100.1", score: 30, grade: "A" },
     { id: 3, course: "ges 102.1", score: 35, grade: "A" },
@@ -130,7 +187,8 @@ const Check = () => {
             </tbody>
           </table>
 
-          <h3>Year 1</h3>
+{/* Year 1 First semester result */}
+          <h3>Year 1 (First Semester)</h3>
           <table>
             <thead>
               <tr>
@@ -140,7 +198,7 @@ const Check = () => {
               </tr>
             </thead>
             <tbody>
-              {yearone.map((item) => (
+              {yearOneFirst.map((item) => (
                 <tr key={item.id}>
                   <td>{item.course}</td>
                   <td>{item.score}</td>
@@ -153,7 +211,8 @@ const Check = () => {
             <h5>GPA: 3.8</h5>
           </div>
 
-          <h3>Year 2</h3>
+{/* Year 1 second semester result */}
+          <h3>Year 1 (Second Semester)</h3>
           <table>
             <thead>
               <tr>
@@ -163,7 +222,7 @@ const Check = () => {
               </tr>
             </thead>
             <tbody>
-              {yearone.map((item) => (
+              {yearOneSecond.map((item) => (
                 <tr key={item.id}>
                   <td>{item.course}</td>
                   <td>{item.score}</td>
@@ -176,7 +235,8 @@ const Check = () => {
             <h5>GPA: 3.8</h5>
           </div>
 
-          <h3>Year 3</h3>
+{/* Year 2 First semester result */}
+          <h3>Year 2 (First Semester)</h3>
           <table>
             <thead>
               <tr>
@@ -186,7 +246,7 @@ const Check = () => {
               </tr>
             </thead>
             <tbody>
-              {yearone.map((item) => (
+              {yearTwoFirst.map((item) => (
                 <tr key={item.id}>
                   <td>{item.course}</td>
                   <td>{item.score}</td>
@@ -199,7 +259,8 @@ const Check = () => {
             <h5>GPA: 3.8</h5>
           </div>
 
-          <h3>Year 4</h3>
+{/* Year 2 second semester result */}
+          <h3>Year 2 (Second Semester)</h3>
           <table>
             <thead>
               <tr>
@@ -209,7 +270,7 @@ const Check = () => {
               </tr>
             </thead>
             <tbody>
-              {yearone.map((item) => (
+              {yearTwoSecond.map((item) => (
                 <tr key={item.id}>
                   <td>{item.course}</td>
                   <td>{item.score}</td>
@@ -221,6 +282,105 @@ const Check = () => {
           <div className="gpa">
             <h5>GPA: 3.8</h5>
           </div>
+
+
+{/* Year 3 first semester result */}
+          <h3>Year 3 (First Semester)</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>COURSE CODE</th>
+                <th>SCORE</th>
+                <th>GRADE</th>
+              </tr>
+            </thead>
+            <tbody>
+              {yearThreeFirst.map((item) => (
+                <tr key={item.id}>
+                  <td>{item.course}</td>
+                  <td>{item.score}</td>
+                  <td>{item.grade}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <div className="gpa">
+            <h5>GPA: 3.8</h5>
+          </div>
+
+{/* Year 3 second semester result */}
+          <h3>Year 3 (Second Semester)</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>COURSE CODE</th>
+                <th>SCORE</th>
+                <th>GRADE</th>
+              </tr>
+            </thead>
+            <tbody>
+              {yearThreeSecond.map((item) => (
+                <tr key={item.id}>
+                  <td>{item.course}</td>
+                  <td>{item.score}</td>
+                  <td>{item.grade}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <div className="gpa">
+            <h5>GPA: 3.8</h5>
+          </div>
+
+{/* Year 4 first semester result */}
+          <h3>Year 4 (First Semester)</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>COURSE CODE</th>
+                <th>SCORE</th>
+                <th>GRADE</th>
+              </tr>
+            </thead>
+            <tbody>
+              {yearFourFirst.map((item) => (
+                <tr key={item.id}>
+                  <td>{item.course}</td>
+                  <td>{item.score}</td>
+                  <td>{item.grade}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <div className="gpa">
+            <h5>GPA: 3.8</h5>
+          </div>
+
+{/* Year 4 second semester result */}
+          <h3>Year 4 (Second Semester)</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>COURSE CODE</th>
+                <th>SCORE</th>
+                <th>GRADE</th>
+              </tr>
+            </thead>
+            <tbody>
+              {yearFourSecond.map((item) => (
+                <tr key={item.id}>
+                  <td>{item.course}</td>
+                  <td>{item.score}</td>
+                  <td>{item.grade}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <div className="gpa">
+            <h5>GPA: 3.8</h5>
+          </div>
+
+          {/* Total CGPA */}
           <div className="gpa">
             <h4>Your CGPA is 4.2</h4>
           </div>
