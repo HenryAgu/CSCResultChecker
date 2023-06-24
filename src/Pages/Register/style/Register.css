@@ -55,7 +55,7 @@
   color: #5c5c65;
 }
 
-.inner_form input {
+.inner_form input,.inner_form select {
   width: 100%;
   padding: 12px 8px;
   font-size: 16px;
@@ -64,7 +64,7 @@
   border-radius: 8px;
 }
 
-.inner_form input:focus {
+.inner_form input:focus,.inner_form select:focus {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 

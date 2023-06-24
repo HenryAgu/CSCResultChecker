@@ -28,7 +28,15 @@ const Register = () => {
         </div>
         <div className="inner_form">
           <label htmlFor="">Year Of Enrollment</label>
-          <input type="number" placeholder="Enrollment Year" required />
+          <select id="my-dropdown" name="dropdown">
+          <option value="default" selected>----Select A Year----</option>
+            <option value="option1">2018</option>
+            <option value="option2">2019</option>
+            <option value="option3">2020</option>
+            <option value="option4">2021</option>
+            <option value="option4">2022</option>
+            <option value="option4">2023</option>
+          </select>
         </div>
         <button>Register</button>
       </form>
