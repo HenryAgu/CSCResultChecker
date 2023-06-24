@@ -38,7 +38,7 @@ nav {
 /* Medium Screens */
 @media (max-width: 480px) {
   .inner_nav {
-    width: 95%;
+    width: 92%;
     /* justify-content: center; */
   }
 
