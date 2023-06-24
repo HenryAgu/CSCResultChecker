@@ -1,5 +1,8 @@
 // import React from 'react'
 
+// Nav link
+import { NavLink } from "react-router-dom";
+
 // stylesheet
 import "./style/Navbar.css";
 
@@ -10,7 +13,7 @@ const Navbar = () => {
   return (
     <nav>
       <div className="inner_nav">
-        <img src={NavLogo} alt="Logo" />
+      <NavLink to="/"><img src={NavLogo} alt="Uniport Logo" /></NavLink>
         <h2>Csc Result Checker</h2>
       </div>
     </nav>

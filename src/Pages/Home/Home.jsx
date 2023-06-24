@@ -19,7 +19,7 @@ const Home = () => {
         <div className="inner_home_bottom">
           <h3>Welcome To The Official Computer Science Student Result Checker</h3>
           <div className="bottom_buttons">
-            <NavLink to="/login"><button>Login</button></NavLink>
+            <NavLink to="/check_result"><button>Check Result</button></NavLink>
             <NavLink to="/register"><button>Register</button></NavLink>
           </div>
         </div>

@@ -30,6 +30,8 @@
 
 .inner_home_bottom h3{
     font-weight: 700;
+    width: 80%;
+    margin: 0 auto;
     font-size: 35px;
     color: #1c2767;
 }
@@ -38,13 +40,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 30px;
+    margin-top: 50px;
     column-gap: 20px;
 }
 
 .bottom_buttons button{
-    font-size: 16px;
-    padding: 10px 35px;
+    font-size: 18px;
+    padding: 10px 40px;
     background-color: #1c2767;
     color: #ffffff;
     font-weight: 500;
@@ -86,9 +88,21 @@
         height: auto;
     }
 
+    .inner_home_bottom h3{
+        width: 100%;
+    }
+
     .inner_home_bottom{
         width: 90%;
         margin: 0 auto;
     }
 
+    .bottom_buttons{
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
+    .bottom_buttons button{
+        width: 100%;
+    }
 }

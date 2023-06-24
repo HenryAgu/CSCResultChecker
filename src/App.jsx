@@ -7,6 +7,8 @@ import './App.css'
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import Home from "./Pages/Home/Home";
+import Check from "./Pages/Check/Check";
+import Register from "./Pages/Register/Register";
 
 function App() {
 
@@ -17,6 +19,8 @@ function App() {
             <Navbar/>
             <Routes>
               <Route exact path="/" element={<Home/>}/>
+              <Route exact path="/check_result" element={<Check/>}/>
+              <Route exact path="/register" element={<Register/>}/>
             </Routes>
             <Footer />
           </BrowserRouter>
