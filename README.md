@@ -34,11 +34,6 @@ The CSC Result Checker website is built using the following technologies:
 - HTML: Markup language for creating web pages
 - CSS: Styling language for designing web pages
 
-## Contributing
-
-
-## Technology Used
-
 
 # Developers
 
