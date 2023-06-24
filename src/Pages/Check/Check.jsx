@@ -149,6 +149,9 @@ const Check = () => {
               ))}
             </tbody>
           </table>
+          <div className="gpa">
+            <h5>GPA: 3.8</h5>
+          </div>
 
           <h3>Year 2</h3>
           <table>
@@ -169,6 +172,9 @@ const Check = () => {
               ))}
             </tbody>
           </table>
+          <div className="gpa">
+            <h5>GPA: 3.8</h5>
+          </div>
 
           <h3>Year 3</h3>
           <table>
@@ -189,6 +195,9 @@ const Check = () => {
               ))}
             </tbody>
           </table>
+          <div className="gpa">
+            <h5>GPA: 3.8</h5>
+          </div>
 
           <h3>Year 4</h3>
           <table>
@@ -209,6 +218,12 @@ const Check = () => {
               ))}
             </tbody>
           </table>
+          <div className="gpa">
+            <h5>GPA: 3.8</h5>
+          </div>
+          <div className="gpa">
+            <h4>Your CGPA is 4.2</h4>
+          </div>
           <div className="result_buttons">
             <button onClick={hideResult}><GiCancel/>CLOSE</button>
           </div>
