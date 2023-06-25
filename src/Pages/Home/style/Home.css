@@ -103,6 +103,7 @@
     }
 
     .bottom_buttons button{
-        width: 100%;
+        width: 80vw;
+        height: 50px;
     }
 }

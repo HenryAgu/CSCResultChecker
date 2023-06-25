@@ -22,90 +22,90 @@ const Check = () => {
     { id: 1, course: "csc 180.1", score: 95, grade: "A" },
     { id: 2, course: "ges 100.1", score: 30, grade: "A" },
     { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 4, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 5, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 6, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 7, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 8, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 9, course: "ges 102.1", score: 35, grade: "A" },
   ];
 
-    // year one second semester
-    const yearOneSecond = [
-      { id: 1, course: "csc 180.1", score: 95, grade: "A" },
-      { id: 2, course: "ges 100.1", score: 30, grade: "A" },
-      { id: 3, course: "ges 103.1", score: 35, grade: "A" },
-      { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-      { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-      { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-      { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-      { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-      { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-    ];
+  // year one second semester
+  const yearOneSecond = [
+    { id: 1, course: "csc 180.1", score: 95, grade: "A" },
+    { id: 2, course: "ges 100.1", score: 30, grade: "A" },
+    { id: 3, course: "ges 103.1", score: 35, grade: "A" },
+    { id: 4, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 5, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 6, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 7, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 8, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 9, course: "ges 102.1", score: 35, grade: "A" },
+  ];
 
   // year two first semester
   const yearTwoFirst = [
     { id: 1, course: "csc 180.1", score: 25, grade: "A" },
     { id: 2, course: "ges 100.1", score: 30, grade: "A" },
     { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 4, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 5, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 6, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 7, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 8, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 9, course: "ges 102.1", score: 35, grade: "A" },
   ];
 
-    // year two second semester
-    const yearTwoSecond = [
-      { id: 1, course: "csc 180.1", score: 25, grade: "A" },
-      { id: 2, course: "ges 100.1", score: 30, grade: "A" },
-      { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-      { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-      { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-      { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-      { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-      { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-      { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-    ];
+  // year two second semester
+  const yearTwoSecond = [
+    { id: 1, course: "csc 180.1", score: 25, grade: "A" },
+    { id: 2, course: "ges 100.1", score: 30, grade: "A" },
+    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 4, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 5, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 6, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 7, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 8, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 9, course: "ges 102.1", score: 35, grade: "A" },
+  ];
 
-    // Year Three first semester
+  // Year Three first semester
   const yearThreeFirst = [
     { id: 1, course: "csc 180.1", score: 75, grade: "A" },
     { id: 2, course: "ges 100.1", score: 30, grade: "A" },
     { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 4, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 5, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 6, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 7, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 8, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 9, course: "ges 102.1", score: 35, grade: "A" },
   ];
 
-      // Year Three second semester
-      const yearThreeSecond = [
-        { id: 1, course: "csc 180.1", score: 75, grade: "A" },
-        { id: 2, course: "ges 100.1", score: 30, grade: "A" },
-        { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-        { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-        { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-        { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-        { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-        { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-        { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-      ];
+  // Year Three second semester
+  const yearThreeSecond = [
+    { id: 1, course: "csc 180.1", score: 75, grade: "A" },
+    { id: 2, course: "ges 100.1", score: 30, grade: "A" },
+    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 4, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 5, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 6, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 7, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 8, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 9, course: "ges 102.1", score: 35, grade: "A" },
+  ];
 
-// year four first semester
+  // year four first semester
   const yearFourFirst = [
     { id: 1, course: "csc 180.1", score: 25, grade: "A" },
     { id: 2, course: "ges 100.1", score: 30, grade: "A" },
     { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 4, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 5, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 6, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 7, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 8, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 9, course: "ges 102.1", score: 35, grade: "A" },
   ];
 
   // year four second semester
@@ -113,12 +113,12 @@ const Check = () => {
     { id: 1, course: "csc 180.1", score: 25, grade: "A" },
     { id: 2, course: "ges 100.1", score: 30, grade: "A" },
     { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
-    { id: 3, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 4, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 5, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 6, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 7, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 8, course: "ges 102.1", score: 35, grade: "A" },
+    { id: 9, course: "ges 102.1", score: 35, grade: "A" },
   ];
 
   // result checker function
@@ -132,7 +132,7 @@ const Check = () => {
   const hideResult = () => {
     setShow(true);
     setHide(false);
-  }
+  };
 
   return (
     <main className="check">
@@ -187,7 +187,7 @@ const Check = () => {
             </tbody>
           </table>
 
-{/* Year 1 First semester result */}
+          {/* Year 1 First semester result */}
           <h3>Year 1 (First Semester)</h3>
           <table>
             <thead>
@@ -211,7 +211,7 @@ const Check = () => {
             <h5>GPA: 3.8</h5>
           </div>
 
-{/* Year 1 second semester result */}
+          {/* Year 1 second semester result */}
           <h3>Year 1 (Second Semester)</h3>
           <table>
             <thead>
@@ -235,7 +235,7 @@ const Check = () => {
             <h5>GPA: 3.8</h5>
           </div>
 
-{/* Year 2 First semester result */}
+          {/* Year 2 First semester result */}
           <h3>Year 2 (First Semester)</h3>
           <table>
             <thead>
@@ -259,7 +259,7 @@ const Check = () => {
             <h5>GPA: 3.8</h5>
           </div>
 
-{/* Year 2 second semester result */}
+          {/* Year 2 second semester result */}
           <h3>Year 2 (Second Semester)</h3>
           <table>
             <thead>
@@ -283,8 +283,7 @@ const Check = () => {
             <h5>GPA: 3.8</h5>
           </div>
 
-
-{/* Year 3 first semester result */}
+          {/* Year 3 first semester result */}
           <h3>Year 3 (First Semester)</h3>
           <table>
             <thead>
@@ -308,7 +307,7 @@ const Check = () => {
             <h5>GPA: 3.8</h5>
           </div>
 
-{/* Year 3 second semester result */}
+          {/* Year 3 second semester result */}
           <h3>Year 3 (Second Semester)</h3>
           <table>
             <thead>
@@ -332,7 +331,7 @@ const Check = () => {
             <h5>GPA: 3.8</h5>
           </div>
 
-{/* Year 4 first semester result */}
+          {/* Year 4 first semester result */}
           <h3>Year 4 (First Semester)</h3>
           <table>
             <thead>
@@ -356,7 +355,7 @@ const Check = () => {
             <h5>GPA: 3.8</h5>
           </div>
 
-{/* Year 4 second semester result */}
+          {/* Year 4 second semester result */}
           <h3>Year 4 (Second Semester)</h3>
           <table>
             <thead>
@@ -385,7 +384,10 @@ const Check = () => {
             <h4>Your CGPA is 4.2</h4>
           </div>
           <div className="result_buttons">
-            <button onClick={hideResult}><GiCancel/>CLOSE</button>
+            <button onClick={hideResult}>
+              <GiCancel />
+              CLOSE
+            </button>
           </div>
         </div>
       ) : (
