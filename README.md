@@ -42,6 +42,11 @@ The CSC Result Checker website is built using the following technologies:
 - GitHub: [github.com/HenryAgu](https://github.com/HenryAgu)
 - Twitter: [twitter.com/_henryi](https://www.twitter.com/_henryi)
 
+## Nweke Manuchimso Emmanuel
+- Email: nwekeemmanuel2m@gmail.com
+- GitHub: [github.com/Manuel-co](https://github.com/Manuel-co)
+- Twitter: [twitter.com/ManuchimsoNweke](https://twitter.com/ManuchimsoNweke)
+
 ---
 
 Thank you for using the CSC Result Checker website! We hope it provides you with a smooth and efficient experience in checking your exam results.
