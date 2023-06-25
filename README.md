@@ -37,6 +37,8 @@ The CSC Result Checker website is built using the following technologies:
 
 # Developers
 
+### FrontEnd Developers
+
 ## Henry Agu
 - Email: aguhenrychuks@gmail.com
 - GitHub: [github.com/HenryAgu](https://github.com/HenryAgu)
