@@ -53,6 +53,11 @@ The CSC Result Checker website is built using the following technologies:
 - Email: benjaminkevin18@gmail.com
 - GitHub: [github.com/Kevin-benjamin](https://github.com/Kevin-benjamin)
 - Twitter: [twitter.com/_KevinBenjamin](https://twitter.com/_KevinBenjamin)
+
+## Victory Tuduo
+- Email: tuduov@gmail.com
+- GitHub: [github.com/Victory-ET](https://github.com/Victory-ET)
+- Twitter: [twitter.com/shinobi_js](https://twitter.com/shinobi_js)
 ---
 
 Thank you for using the CSC Result Checker website! We hope it provides you with a smooth and efficient experience in checking your exam results.
