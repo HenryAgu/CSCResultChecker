@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+.cards{
+    display: flex;
+    /* justify-content: center; */
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-top: 100px;
+    height: 450px;
+}
+
+.carddivs{
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    /* border: 1px solid red; */
+    width: 100%;
+}
+
+.carddivs > div {
+    display: flex;
+    flex-basis: calc(50% - 40px);
+    justify-content: center;
+    flex-direction: column;
+}
+
+.carddivs > div > div{
+    display: flex;
+    justify-content: center;
+    flex-direction:row;
+}
+
+.box{
+    margin:20px;
+    /* border: 1px solid red; */
+    border-radius: 16px;
+    background-color: #f0efef;
+    box-shadow: 0 0 1px;
+    cursor: pointer;
+}
+
+.box:hover{
+    box-shadow: 5px 5px 20px;
+}
+
+.box1{
+    background: yellow;
+}

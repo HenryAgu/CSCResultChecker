@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+body{
+    overflow: hidden;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    /* border:1px solid red; */
+    height: 100px;
+    width: 100vw;
+    background: #144a77;
+}
+
+.header1{
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-right: 20px;
+    color: white;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:hover, a:active {
+    outline: none;
+}
+
+.heading{
+    margin: 20px;
+    display: flex;
+    text-decoration: none;
+}
+
+.log{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding-bottom: 10px;
+    margin-right: 40px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.log:hover{
+    background: black;
+    border-radius: 10px;
+}
+
+.icon {
+    padding-top: 10px;
+    cursor: pointer;
+}
+
+.icon:hover{
+    cursor: pointer;
+}
+
+img {
+    transition: transform 0.3s cubic-bezier(0.17, 0.84, 0.44, 1);
+  }
+  
+  .clicked {
+    transform: scale(1.2) rotate(90deg);
+    transition-timing-function: cubic-bezier(0.1, 0.7, 1, 0.1);
+    cursor: pointer;
+  }

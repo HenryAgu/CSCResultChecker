@@ -4,11 +4,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css'
 
 // components
-import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import Home from "./Pages/Home/Home";
 import Check from "./Pages/Check/Check";
 import Register from "./Pages/Register/Register";
+import Admin from "./Pages/Admin/Admin";
+import Layout from "./Layout";
 
 function App() {
 
@@ -16,13 +17,15 @@ function App() {
       <>
         <main>
           <BrowserRouter>
-            <Navbar/>
             <Routes>
-              <Route exact path="/" element={<Home/>}/>
-              <Route exact path="/check_result" element={<Check/>}/>
-              <Route exact path="/register" element={<Register/>}/>
+              <Route path="/" element={<Layout/>}>
+                <Route index element={<Home/>}/>
+                <Route exact path="/check_result" element={<Check/>}/>
+                <Route exact path="/register" element={<Register/>}/>
+              </Route>
+              <Route exact path="/admin" element={<Admin/>}/>
             </Routes>
-            <Footer />
+            <Footer/>
           </BrowserRouter>
         </main>
       </>

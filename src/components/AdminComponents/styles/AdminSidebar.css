@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+.sidebar{
+    /* border: 1px solid brown; */
+    /* width: 200px; */
+    height: 695px;
+    transition: width 0.3s ease;
+    background: #144a77;
+    color: #fff;
+}
+
+.itemBody{
+    display: flex;
+    padding: 10px;
+    gap: 15px;
+    margin: 10px;
+    width: 80%;
+    text-decoration: none;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.itemBody:hover{
+    box-shadow: 5px 5px 20px;
+    background: #000000;
+    border-radius: 16px;
+    text-decoration: none;
+    outline: none;
+}
+
+.itemName{
+    color: white;
+    text-decoration: none;
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.itemBody a:hover, .itemBody a:active {
+    text-decoration: none;
+    outline: none;
+}
+
+.itemIcon:hover, .itemIcon:active{
+    text-decoration: none;
+    outline: none;
+}
+
+.itemName:hover, .itemName:active{
+    text-decoration: none;
+    outline: none;
+}
+
