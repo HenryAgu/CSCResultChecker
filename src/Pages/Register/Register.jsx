@@ -7,13 +7,18 @@ import "./style/Register.css";
 import { NavLink } from "react-router-dom";
 
 const Register = () => {
+
+  // register form submit function
+  const handleRegister = (event) => {
+    event.preventDefault();
+  }
   return (
     <main className='register'>
       <div className="register_header">
         <h1>Register</h1>
       </div>
       <p>Create your account now!</p>
-      <form className="register_form">
+      <form className="register_form" onSubmit={handleRegister}>
         <div className="inner_form">
           <label htmlFor="">Full Name</label>
           <input type="name" placeholder="Enter Full name" required />
