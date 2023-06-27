@@ -6,10 +6,13 @@
     transition: width 0.3s ease;
     background: #144a77;
     color: #fff;
+    font-family: 'DM Sans', sans-serif;
 }
 
 .itemBody{
     display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 10px;
     gap: 15px;
     margin: 10px;
@@ -19,7 +22,7 @@
 }
 
 .itemBody:hover{
-    box-shadow: 5px 5px 20px;
+    /* box-shadow: 5px 5px 20px; */
     background: #000000;
     border-radius: 16px;
     text-decoration: none;
@@ -40,6 +43,8 @@ a {
     text-decoration: none;
     outline: none;
 }
+
+
 
 .itemIcon:hover, .itemIcon:active{
     text-decoration: none;
