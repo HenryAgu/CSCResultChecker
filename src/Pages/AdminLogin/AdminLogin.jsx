@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import "./style/AdminLogin.css";
+import "./Style/AdminLogin.css";
 import Navbar from "../../components/Navbar/Navbar";
 import { NavLink } from "react-router-dom";
 
