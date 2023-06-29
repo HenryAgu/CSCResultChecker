@@ -1,0 +1,17 @@
+.forgot{
+    color: #000;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-self: flex-end;
+    align-items: center;
+
+    &:hover{
+        color: #000;
+    }
+}
