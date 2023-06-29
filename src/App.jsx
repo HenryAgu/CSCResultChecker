@@ -29,14 +29,11 @@ function App() {
                 <Route exact path="/register" element={<Register/>}/>
               </Route>
               <Route exact path="/admin" element={<Admin/>}/>
-<<<<<<< Updated upstream
               <Route exact path="/admin/register" element={<AdminRegister/>}/>
               <Route exact path="/admin/register/login" element={<AdminLogin/>}/>
               <Route exact path="/admin/register/login/forgotpass" element={<AdminForgotPassword/>}/>
               <Route exact path="/admin/register/login/forgotpass/passwordrest" element={<AdminPasswordReset/>}/>
-=======
               <Route exact path="/result" element={<Result/>}/>
->>>>>>> Stashed changes
             </Routes>
             <Footer/>
           </BrowserRouter>
