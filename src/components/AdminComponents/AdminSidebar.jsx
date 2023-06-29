@@ -44,7 +44,7 @@ const AdminSidebar = () => {
         <div>
             <div style={{width: sharedState ? '300px' : '80px'}}className='sidebar'>
                 {sideItems.map((item, index) => (
-                <NavLink to={item.path} key={index} className="itemBody">
+                <NavLink to={item.path} key={index} className="itemBody" title={item.name}>
                     <div className='itemIcon'><img src={item.icon} width={30} height={30}/></div>
                     <h3 style={{display: sharedState ? 'block': 'none'}} className='itemName'>{item.name}</h3>
                 </NavLink>
