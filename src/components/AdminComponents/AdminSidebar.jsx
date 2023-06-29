@@ -29,7 +29,7 @@ const AdminSidebar = () => {
             icon: Student,
         },
         {
-            path: '/',
+            path: '/result',
             name: 'Result',
             icon: Result,
         },
