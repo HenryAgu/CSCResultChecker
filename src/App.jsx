@@ -10,6 +10,11 @@ import Check from "./Pages/Check/Check";
 import Register from "./Pages/Register/Register";
 import Admin from "./Pages/Admin/Admin";
 import Layout from "./Layout";
+import AdminRegister from "./Pages/AdminRegister/AdminRegister"; 
+import AdminLogin from "./Pages/AdminLogin/AdminLogin";  
+import AdminForgotPassword from "./Pages/AdminForgotPassword/AdminForgotPassword";
+import AdminPasswordReset from "./Pages/AdminPasswordReset/AdminPasswordReset";
+
 
 function App() {
 
@@ -24,6 +29,10 @@ function App() {
                 <Route exact path="/register" element={<Register/>}/>
               </Route>
               <Route exact path="/admin" element={<Admin/>}/>
+              <Route exact path="/admin/register" element={<AdminRegister/>}/>
+              <Route exact path="/admin/register/login" element={<AdminLogin/>}/>
+              <Route exact path="/admin/register/login/forgotpass" element={<AdminForgotPassword/>}/>
+              <Route exact path="/admin/register/login/forgotpass/passwordrest" element={<AdminPasswordReset/>}/>
             </Routes>
             <Footer/>
           </BrowserRouter>

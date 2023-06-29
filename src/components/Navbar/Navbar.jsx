@@ -15,7 +15,7 @@ const Navbar = () => {
       <div className="inner_nav">
       <NavLink to="/"><img src={NavLogo} alt="Uniport Logo" /></NavLink>
         <h2>Csc Result Checker</h2>
-      <NavLink to="/admin"><button>ADMIN</button></NavLink>
+      <NavLink to="/admin/register"><button>ADMIN</button></NavLink>
       </div>
     </nav>
   )
