@@ -7,3 +7,10 @@
 .mainbar{
     width: 100%;
 } */
+
+/* Medium Screens */
+    @media (max-width: 480px) {
+        .entire_dashboard{
+            display: none;
+        }
+    }

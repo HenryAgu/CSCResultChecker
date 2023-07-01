@@ -65,4 +65,13 @@ The CSC Result Checker website is built using the following technologies:
 - Twitter: [twitter.com/FlynnFavour](https://twitter.com/FlynnFavour?t=NAUXJRm0zs0HI77k0hK0EQ&s=09)
 ---
 
+### BackEnd Developers
+
+## Pascal Nwokeocha
+- Email: paschalnwokeocha1@gmail.com
+- GitHub: [github.com/paschal1](https://github.com/paschal1)
+- Twitter: [twitter.com/paschalnwokeocha](https://twitter.com/paschalnwokeocha)
+
+---
+
 Thank you for using the CSC Result Checker website! We hope it provides you with a smooth and efficient experience in checking your exam results.
