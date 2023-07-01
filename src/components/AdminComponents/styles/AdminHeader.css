@@ -46,7 +46,7 @@ a:hover, a:active {
 }
 
 .log:hover{
-    background: black;
+    background: #e74c3c;
     border-radius: 10px;
 }
 
@@ -59,12 +59,26 @@ a:hover, a:active {
     cursor: pointer;
 }
 
-img {
+.heading img {
     transition: transform 0.3s cubic-bezier(0.17, 0.84, 0.44, 1);
-  }
+    transition: .8s ease;
+}
   
-  .clicked {
+.clicked {
     transform: scale(1.2) rotate(90deg);
     transition-timing-function: cubic-bezier(0.1, 0.7, 1, 0.1);
     cursor: pointer;
-  }
+}
+
+.heading img:hover{
+    background-color: #add8e6;
+    border-radius: 2px;
+}
+
+.centerIcon{
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

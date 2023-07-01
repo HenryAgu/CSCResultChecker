@@ -9,11 +9,8 @@ function Wrapper() {
         <MyContextProvider>
 
                 <AdminHeader/>
-                <div className='mainbody'>
+                <div>
                     <AdminSidebar/>
-                    <div className='mainbar'>
-                        <AdminBody/>
-                    </div>
                 </div>
                 
         </MyContextProvider>

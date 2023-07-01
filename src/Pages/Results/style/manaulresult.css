@@ -1,0 +1,66 @@
+.mainFormBody{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin: 20px;
+}
+
+.mainFormDesc{
+    display: flex;
+    justify-content: center;
+}
+
+.mainFormCard{
+    padding: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.label{
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.resultInput{
+    margin-top: 10px;
+    padding: 10px;
+    width: 400px;
+    height: 50px;
+    font-size: 15px;
+    border-radius: 15px;
+    padding-left: 10px;
+    border: none;
+    margin-bottom: 10px;
+}
+
+.mainForm{
+    margin: 10px;
+    padding: 10px;
+}
+.results-selector{
+    width: 400px;
+    height: 50px;
+    font-size: 15px;
+    border-radius: 15px;
+    border: none;
+    margin-bottom: 10px;
+}
+
+.results-selector:focus,.results-checker:focus {
+    border: none;
+    outline: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+
+  .result-button{
+    padding: 10px;
+    color: white;
+    width: 150px;
+    background: #1c2767;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    float: right;
+    margin: 10px;
+  }

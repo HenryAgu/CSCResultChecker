@@ -15,6 +15,9 @@ import AdminRegister from "./Pages/AdminRegister/AdminRegister";
 import AdminLogin from "./Pages/AdminLogin/AdminLogin";  
 import AdminForgotPassword from "./Pages/AdminForgotPassword/AdminForgotPassword";
 import AdminPasswordReset from "./Pages/AdminPasswordReset/AdminPasswordReset";
+import Courses from "./Pages/Courses/Courses";
+import Students from "./Pages/Students/Students";
+import StudentAdmin from "./Pages/StudentAdmin/StudentAdmin"
 
 
 function App() {
@@ -34,6 +37,9 @@ function App() {
               <Route exact path="/admin/register/login/forgotpass" element={<AdminForgotPassword/>}/>
               <Route exact path="/admin/register/login/forgotpass/passwordrest" element={<AdminPasswordReset/>}/>
               <Route exact path="/result" element={<Result/>}/>
+              <Route exact path="/course" element={<Courses/>}/>
+              <Route exact path="/student" element={<Students/>}/>
+              <Route exact path="/studentadmin" element={<StudentAdmin/>}/>
             </Routes>
             <Footer/>
           </BrowserRouter>
