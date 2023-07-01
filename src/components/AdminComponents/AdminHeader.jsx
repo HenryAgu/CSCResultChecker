@@ -15,13 +15,15 @@ const AdminHeader = () => {
       <div>
         <div className="header">
           <div className="heading">
-            <img
-              className={sharedState ? "clicked" : "icon"}
-              src={sharedState ? xIcon : menu}
-              width={32}
-              height={32}
-              onClick={toggleShareBoolean}
-            />
+            <div className="centerIcon">
+              <img
+                className={sharedState ? "clicked" : "icon"}
+                src={sharedState ? xIcon : menu}
+                width={32}
+                height={32}
+                onClick={toggleShareBoolean}
+              />
+            </div>
             <h2 className="header1"> Uniport | Admin </h2>
           </div>
           <NavLink to="/">
