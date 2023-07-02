@@ -8,9 +8,35 @@
     width: 100%;
 } */
 
+.entire_mobile_dashboard{
+    display: none;
+}
+
 /* Medium Screens */
     @media (max-width: 480px) {
         .entire_dashboard{
             display: none;
+        }
+
+        .entire_mobile_dashboard{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            row-gap: 30px;
+            width: 90%;
+            margin: 0 auto;
+            height: 100vh;
+        }
+
+        .entire_mobile_dashboard img{
+            width: 200px;
+            height: 200px;
+        }
+
+        .entire_mobile_dashboard p{
+            font-weight: 500;
+            font-size: 15px;
         }
     }

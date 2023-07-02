@@ -3,6 +3,8 @@ import React from 'react'
 // stylesheet
 import "./style/Home.css";
 
+import useAuth from '../../hooks/useAuth';
+
 // Nav link
 import { NavLink } from "react-router-dom";
 
@@ -10,6 +12,7 @@ import { NavLink } from "react-router-dom";
 import HomeLogo from "./image/Logo.jpg";
 
 const Home = () => {
+
   return (
     <main className='home'>
       <div className="inner_home">
