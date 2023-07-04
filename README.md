@@ -23,7 +23,7 @@ To run the CSC Result Checker locally on your machine, follow these steps:
 2. Navigate to the project directory: `cd csc-result-checker`
 3. Install the dependencies: `npm install`
 4. Start the development server: `npm start`
-5. Open your browser and visit `http://localhost:3000` to access the website.
+5. Open your browser and visit `http://localhost:5173` to access the website.
 
 ## Technologies Used
 
