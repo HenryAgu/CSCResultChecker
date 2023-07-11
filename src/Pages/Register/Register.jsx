@@ -6,11 +6,25 @@ import "./style/Register.css";
 // Nav link
 import { NavLink } from "react-router-dom";
 
+// React toastify
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const Register = () => {
 
   // register form submit function
   const handleRegister = (event) => {
     event.preventDefault();
+    toast.success('Successful! OTP sent to mail', {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
   }
   return (
     <main className='register'>
@@ -56,6 +70,7 @@ const Register = () => {
           </NavLink>
         </span>
       </div>
+      <ToastContainer />
     </main>
   )
 }

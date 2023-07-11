@@ -64,7 +64,7 @@ const AdminLogin = () => {
       setErrorMessage("Please fill in all fields.");
     } else {
       // Simulating server-side validation and error handling
-      if (email === "admin@example.com" && password === "password") {
+      if (email === "admin@example.com"  || email === "csc@admin.com" && password === "password") {
         // Successful login
         console.log("Login successful");
         setAuth({
