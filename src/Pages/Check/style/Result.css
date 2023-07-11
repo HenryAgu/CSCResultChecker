@@ -51,6 +51,11 @@
     border-top: 1px solid #ccc;
     padding: 8px;
   }
+
+  td{
+    text-transform: uppercase;
+    font-weight: 500;
+  }
   
   th {
     background-color: #f2f2f2;

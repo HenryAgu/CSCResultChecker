@@ -19,8 +19,8 @@ const Check = () => {
 
   // year one first semester
   const yearOneFirst = [
-    { id: 1, course: "csc 180.1", score: 95, grade: "A" },
-    { id: 2, course: "ges 100.1", score: 30, grade: "A" },
+    { id: 1, course: "csc 180.1", score: 95, grade: "F" },
+    { id: 2, course: "ges 100.1", score: 30, grade: "f" },
     { id: 3, course: "ges 102.1", score: 35, grade: "A" },
     { id: 4, course: "ges 102.1", score: 35, grade: "A" },
     { id: 5, course: "ges 102.1", score: 35, grade: "A" },
@@ -202,7 +202,7 @@ const Check = () => {
                 <tr key={item.id}>
                   <td>{item.course}</td>
                   <td>{item.score}</td>
-                  <td>{item.grade}</td>
+                  <td style={{color: item.grade === "F" || item.grade === "f" ? "red": "black"}}>{item.grade}</td>
                 </tr>
               ))}
             </tbody>
