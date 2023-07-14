@@ -15,7 +15,7 @@ import { NavLink } from "react-router-dom";
 import admin from "./images/admin.png";
 import course from "./images/course.png";
 import student from "./images/student.png";
-import result from "./images/result.png";
+import results from "./images/Result.png";
 
 const Dashboard = () => {
   const [studentPage, setStudentPage] = useState(false);
@@ -103,7 +103,6 @@ const Dashboard = () => {
             <div className="student inner_cards">
               <div
                 className="hcard"
-                onClick={() => handleToggle("studentPage")}
               >
                 <img src={student} alt="student" />
                 <h2>Students</h2>
@@ -129,7 +128,7 @@ const Dashboard = () => {
             </div>
             <div className="result inner_cards">
               <div className="hcard" onClick={() => handleToggle("resultPage")}>
-                <img src={result} alt="result" />
+                <img src={results} alt="result" />
                 <h2>Result</h2>
                 <h3>400</h3>
                 <div className="view" onClick={() => handleToggle("resultPage")}>

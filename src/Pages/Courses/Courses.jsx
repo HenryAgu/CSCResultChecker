@@ -29,6 +29,13 @@ const Courses = () => {
           <p>Export</p>
         </div>
       </div>
+      <div className="cards">
+        <div className="carddivs">
+          <div className="inner_cards">
+            
+          </div>
+        </div>
+      </div>
       {add ? <AddCourses /> : null}
       {update ? <UpdateCourses /> : null}
     </div>
