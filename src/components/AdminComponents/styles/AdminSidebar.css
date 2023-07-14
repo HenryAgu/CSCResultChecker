@@ -1,64 +1,77 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
-.sidebar{
-    height: 710px;
-    transition: width 0.3s ease;
-    background: #144a77;
-    color: #fff;
-    font-family: 'DM Sans', sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+.sidebar {
+  margin-top: 100px;
+  height: 100vh;
+  width: 345px;
+  transition: width 0.3s ease;
+  background: #fff;
+  color: #fff;
+  font-family: "DM Sans", sans-serif;
 }
 
-.itemBody{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    gap: 15px;
-    margin: 10px;
-    width: 80%;
-    text-decoration: none;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-    transition: all .8s ease;
+.itemBody {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  padding: 10px 11px;
+  padding-left: 30px;
+  margin: 10px;
+  margin-bottom: 20px;
+  width: 90%;
+  border-radius: 16px;
+  text-decoration: none;
+  transition: all 0.8s ease;
 }
 
-.itemBody:hover{
-    /* box-shadow: 5px 5px 20px; */
-    background: #add8e6;
-    border-radius: 16px;
-    text-decoration: none;
-    outline: none;
+
+.itemBody:hover,.itemBody:focus {
+  cursor: pointer;
+  background: #5d5fef;
+  border-radius: 16px;
+  text-decoration: none;
+  outline: none;
 }
 
-.itemName{
-    color: white;
-    text-decoration: none;
-    outline: none;
+.itemBody:hover .itemName{
+    color: #FFF;
+}
+
+.itemBody:active .itemName{
+    color: #FFF;
+}
+
+.itemName {
+  color: #737791;
+  font-family: 'Poppins';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  text-decoration: none;
+  outline: none;
+}
+
+.itemIcon{
+    font-size: 25px;
+    color: #737791;
+}
+
+.itemBody:hover .itemIcon{
+    color: #FFF;
+}
+
+.itemBody:active .itemIcon{
+    color: #FFF;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
-.itemBody a:hover, .itemBody a:active {
-    text-decoration: none;
-    outline: none;
+.mainbody {
+  display: flex;
+  width: 100%;
 }
 
-
-
-.itemIcon:hover, .itemIcon:active{
-    text-decoration: none;
-    outline: none;
-}
-
-.itemName:hover, .itemName:active{
-    text-decoration: none;
-    outline: none;
-}
-.mainbody{
-    display: flex;
-    width: 100%;
-}
-
-.mainbar{
-    width: 100%;
+.mainbar {
+  width: 100%;
 }

@@ -1,90 +1,127 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
-.dashboardHeader{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 70px;
-    background: #f0efef;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-    font-family: 'DM Sans', sans-serif;
-}
-.cards{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    margin-top: 10px;
-    height: 450px;
-    font-family: 'DM Sans', sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+.dashboard {
+    margin-top: 100px;
+  height: 100vh;
+  padding: 20px;
+  padding-right: 35px;
+  background-color: #f9fafb;
 }
 
-.carddivs{
-    min-height: 100%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    flex-direction: row;
-    width: 100%;
+.AdminHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
-.carddivs > div {
-    display: flex;
-    flex-basis: calc(50% - 40px);
-    justify-content: center;
-    flex-direction: column;
+.header_text h2 {
+  color: #05004e;
+  font-family: Poppins;
+  font-size: 34.08px;
+  font-style: normal;
+  font-weight: 600;
 }
 
-.carddivs > div > div{
-    display: flex;
-    justify-content: center;
-    flex-direction:row;
-    position: relative;
+.header_text span {
+  color: #737791;
+  font-family: Poppins;
+  font-size: 27.264px;
+  font-style: normal;
+  font-weight: 400;
 }
 
-.hcard:hover{
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+.export {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+  padding: 10px 20px;
+  border-radius: 13.632px;
+  border: 1.704px solid #c3d3e2;
+  color: #0f3659;
+  font-family: "Poppins";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  cursor: pointer;
 }
 
-.hcard{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin:20px;
-    border-radius: 5px;
-    background-color: #add8e6;
-    box-shadow: 0 0 1px;
-    cursor: pointer;
-    outline: none;
-    height: 100%;
-    color: white;
+.export_icon {
+  color: #0f3659;
 }
 
-.hcard::before{
-    content: '';
-    position : absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 0;
-    border-left: 3px solid transparent;
-    border-bottom: 3px solid transparent;
-    transition: all .8s ease;
+.cards {
+  border-radius: 35.872px;
+  padding: 20px 10px;
+  border: 1.794px solid #f8f9fa;
+  background: #fff;
+  box-shadow: rgba(238, 238, 238, 0.5) 0px 5px 15px;
 }
 
-.hcard::after{
-    content: '';
-    position : absolute;
-    right: 0;
-    top: 0;
-    width: 0;
-    height: 0;
-    box-sizing: border-box;
-    border-right: 3px solid transparent;
-    border-top: 3px solid transparent;
-    transition: all .8s ease;
+.carddivs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 30px;
 }
 
-.hcard:hover::before,.hcard:hover::after{
-    border-color: #1c2767;
-    width: 100%;
-    height: 100%;
+.inner_cards {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 20px;
+  width: 100%;
+  border-radius: 28.698px;
+}
+
+.inner_cards h2 {
+  color: #151d48;
+  font-family: "Poppins";
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 600;
+  margin: 10px auto;
+}
+
+.inner_cards h3 {
+  color: #425166;
+  font-family: Poppins;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.view {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  column-gap: 5px;
+  color: #4079ed;
+  font-family: Poppins;
+  font-size: 18px;
+  margin: 5px auto;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.student {
+  background: #ffe2e5;
+}
+
+.courses {
+  background: #fff4de;
+}
+
+.result {
+  background-color: #dcfce7;
+}
+
+.admin {
+  background-color: #f3e8ff;
+}
+
+
+@media (max-width: 991px) {
+    .carddivs{
+        flex-wrap: wrap;
+        gap: 20px;
+    }
 }

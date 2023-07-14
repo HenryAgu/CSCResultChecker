@@ -1,40 +1,38 @@
-import{ useState } from'react'
-import AddCourses from './AddCourses'
-import UpdateCourses from './UpdateCourses'
-import './style/courses.css'
+import { useState } from "react";
+import AddCourses from "./AddCourses";
+import UpdateCourses from "./UpdateCourses";
+import "./style/courses.css";
+
+// React icon
+import { FiUpload,FiArrowRight } from "react-icons/fi";
 
 const Courses = () => {
-
-  const [add, setAdd] = useState(false)
-  const [update, setUpdate] = useState(false)
+  const [add, setAdd] = useState(false);
+  const [update, setUpdate] = useState(false);
 
   const handleAdd = () => {
-    setAdd(!add)
-  }
+    setAdd(!add);
+  };
 
   const handleUpdate = () => {
-    setUpdate(!update)
-  }
-//   style={{display: value || value2 ?'none' : 'flex' }}
+    setUpdate(!update);
+  };
+  //   style={{display: value || value2 ?'none' : 'flex' }}
   return (
-    <div>
-        <div className='coursesHeader'>
-            <h2>Courses</h2>
+    <div className="courses_container">
+      <div className="coursesHeader">
+        <div className="header_text">
+          <h2>Courses</h2>
         </div>
-
-        <div style={{display: add || update ?'none' : 'flex' }} className="CoursesBoxes">
-            <div className="cboxes" onClick={handleAdd}><p className="coursespara">Add Student</p></div>
-            <div className="cboxes" onClick={handleUpdate}><p className="coursespara">Update Student</p></div>
+        <div className="export" onClick={() => handleToggle("resultPage")}>
+          <FiUpload className="export_icon" />
+          <p>Export</p>
         </div>
-        {
-            add ? <AddCourses/> : null
-        }
-        {
-            update ? <UpdateCourses/> : null
-        }
+      </div>
+      {add ? <AddCourses /> : null}
+      {update ? <UpdateCourses /> : null}
     </div>
-    
-  )  
-}
+  );
+};
 
-export default Courses
+export default Courses;

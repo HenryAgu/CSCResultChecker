@@ -87,7 +87,7 @@ const AdminLogin = () => {
   return (
     <div>
       <Navbar />
-      <div className="container">
+      <div className="container admin_login">
         <div className="card">
           <h1>Login Account</h1>
           <form className="card-form">

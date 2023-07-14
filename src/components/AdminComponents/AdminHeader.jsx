@@ -1,36 +1,51 @@
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
-import menu from "./icons/menu4.svg";
-import xIcon from "./icons/x.svg";
-import "./styles/AdminHeader.css";
 import { MyContext } from "../../Context";
 
-const AdminHeader = () => {
-  const contextValue = useContext(MyContext);
+// stylesheet
+import "./styles/AdminHeader.css";
 
-  const { sharedState, toggleShareBoolean } = contextValue;
+// React icons
+import { RiArrowDownSLine } from "react-icons/ri";
+
+// Images
+import Logo from "./images/Logo.png";
+import magnifier from "./images/magnifier.png";
+import notification from "./images/notification.png";
+import AdminProfile from "./images/profile.png";
+
+const 
+AdminHeader = () => {
+  const contextValue = useContext(MyContext);
 
   return (
     <main>
-      <div>
         <div className="header">
-          <div className="heading">
-            <div className="centerIcon">
-              <img
-                className={sharedState ? "clicked" : "icon"}
-                src={sharedState ? xIcon : menu}
-                width={32}
-                height={32}
-                onClick={toggleShareBoolean}
-              />
+            <div className="header_logo">
+              <img src={Logo} alt="Logo" />
+              <div className="logo_info">
+                <h5>Uniport</h5>
+                <h6>Admin</h6>
+              </div>
             </div>
-            <h2 className="header1"> Uniport | Admin </h2>
-          </div>
-          <NavLink to="/">
-            <h2 className="header1 log">Logout</h2>
-          </NavLink>
+            <div className="header_search">
+              <img src={magnifier} alt="magnifier" />
+              <input type="text" placeholder="Search for anything here..."/>
+            </div>
+            <div className="header_admin">
+              <div className="admin_notification">
+                <img src={notification} alt="notification" />
+              </div>
+              <div className="admin_profile">
+                <img src={AdminProfile} alt="Profile" />
+              </div>
+              <div className="admin_name">
+                <h5>Henry</h5>
+                <h6>Admin</h6>
+              </div>
+              <RiArrowDownSLine className="drop_down"/>
+            </div>
         </div>
-      </div>
     </main>
   );
 };

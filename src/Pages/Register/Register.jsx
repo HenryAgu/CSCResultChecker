@@ -47,7 +47,7 @@ const Register = () => {
         </div>
         <div className="inner_form">
           <label htmlFor="">Year Of Enrollment</label>
-          <select id="my-dropdown" name="dropdown" defaultValue="default">
+          <select id="my-dropdown" name="dropdown" defaultValue="default" required>
           <option value="default">----Select A Year----</option>
             <option value="option1">2018</option>
             <option value="option2">2019</option>
