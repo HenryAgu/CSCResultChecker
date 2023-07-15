@@ -33,29 +33,6 @@ const Courses = () => {
     admin: "/admin",
   };
 
-  useEffect(() => {
-    const storedState = localStorage.getItem("myStates");
-    if (storedState) {
-      const parsedState = JSON.parse(storedState);
-      setStudentPage(parsedState.studentPage);
-      setAdminPage(parsedState.adminPage);
-      setResultPage(parsedState.resultPage);
-      setCoursesPage(parsedState.coursesPage);
-    } else {
-      const initialState = {
-        studentPage: false,
-        coursesPage: false,
-        resultPage: false,
-        adminPage: false,
-      };
-      setStudentPage(initialState.studentPage);
-      setAdminPage(initialState.adminPage);
-      setResultPage(initialState.resultPage);
-      setCoursesPage(initialState.coursesPage);
-      localStorage.setItem("myStates", JSON.stringify(initialState));
-    }
-  }, []);
-
   const handleToggle = (stateName) => {
     const updatedState = {
       ...JSON.parse(localStorage.getItem("myStates")),

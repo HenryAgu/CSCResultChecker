@@ -8,7 +8,7 @@ import { FiUpload } from "react-icons/fi";
 
 // images
 import ManualImage from "./images/Manually.png";
-import ExcelImage from './images/Excel.png';
+import ExcelImage from "./images/Excel.png";
 
 const Result = () => {
   const [manual, setManual] = useState(false);
@@ -33,15 +33,18 @@ const Result = () => {
         </div>
       </div>
 
-      <div className="cards" style={{ display: manual || Csv ? "none" : "flex" }}>
-        <div className="carddivs course_carddivs" onClick={handleClick} >
-          <div className="course_cards add_course">
+      <div
+        className="cards"
+        style={{ display: manual || Csv ? "none" : "flex" }}
+      >
+        <div className="carddivs course_carddivs" onClick={handleClick}>
+          <div className="course_cards add_result">
             <img src={ManualImage} alt="Manual" />
-            <h2>Add new student</h2>
+            <h2>Add result manually</h2>
           </div>
-          <div className="course_cards update_course" onClick={handleClick2}>
+          <div className="course_cards update_result" onClick={handleClick2}>
             <img src={ExcelImage} alt="Excel" />
-            <h2>Update student</h2>
+            <h2>Add with excel spreedsheet</h2>
           </div>
         </div>
       </div>
