@@ -27,11 +27,11 @@
 
 .file-upload-container {
 	margin: 20px;
-	height: 100%;
   	display: flex;
   	flex-direction: column;
 	align-items: center;
   	justify-content: center;
+	min-height: 50vh;
 }
 
 .dropzone {
@@ -69,4 +69,36 @@
 		width: 90%;
 		margin: 0 auto;
 	}
+}
+
+/* styling for the Result.jsx */
+.cards{
+	display: flex;
+	justify-content: space-around;
+}
+.result_carddivs{
+	display: flex;
+    justify-content: space-around;
+	/* width: 100%; */
+}
+
+.result_cards{
+	display: flex;
+    flex-direction: column;
+    align-items:center ;
+    padding: 30px;
+    border-radius: 28.698px;
+    cursor: pointer;
+}
+
+/* .result_cards .add_result{
+	width: 70%;
+} */
+
+.add_result{
+    background: #FFF4DE;
+}
+
+.Excel_form{
+    background-color: #DCFCE7;
 }

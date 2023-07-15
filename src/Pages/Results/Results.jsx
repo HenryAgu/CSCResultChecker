@@ -13,40 +13,56 @@ import ExcelImage from './images/Excel.png';
 const Result = () => {
   const [manual, setManual] = useState(false);
   const [Csv, setCsv] = useState(false);
+  const [active, setActive] = useState(null)
 
   const handleClick = () => {
-    setManual(true);
-  };
-  const handleClick2 = () => {
-    setCsv(true);
+    // setManual(true);
+    // setClicked(false);
+    setActive('manual');
+    //console.log(`manual ${manual}`)
   };
 
+  const Click2 = () => {
+    // setManual(false)
+    // setCsv(true);
+    setActive('csv');
+   // console.log(`CSV ${Csv}`)
+   console.log(`current component is: ${active}`)
+  };
+
+  console.log(`current component is: ${active}`)
   return (
-    <div className="resultContainer">
-      <div className="ResultHeader">
-        <div className="header_text">
-          <h2>Students</h2>
+    <div>
+      <div className="resultContainer">
+        <div className="ResultHeader">
+          <div className="header_text">
+            <h2>Results</h2>
+          </div>
+          <div className="export" onClick={() => handleToggle("resultPage")}>
+            <FiUpload className="export_icon" />
+            <p>Export</p>
+          </div>
         </div>
-        <div className="export" onClick={() => handleToggle("resultPage")}>
-          <FiUpload className="export_icon" />
-          <p>Export</p>
-        </div>
-      </div>
 
-      <div className="cards" style={{ display: manual || Csv ? "none" : "flex" }}>
-        <div className="carddivs course_carddivs" onClick={handleClick} >
-          <div className="course_cards add_course">
-            <img src={ManualImage} alt="Manual" />
-            <h2>Add new student</h2>
-          </div>
-          <div className="course_cards update_course" onClick={handleClick2}>
-            <img src={ExcelImage} alt="Excel" />
-            <h2>Update student</h2>
-          </div>
-        </div>
+        {
+          active === null && (
+            <div className="cards">
+              <div className="resultdivs result_carddivs" onClick={handleClick} >
+                <div className="result_cards add_result">
+                  <img src={ManualImage} alt="Manual" />
+                  <h2>Add new Result</h2>
+                </div>
+              </div>
+              <div className="result_cards Excel_form" onClick={Click2}>
+                  <img src={ExcelImage} alt="Excel" />
+                  <h2>Enter Result Sheet</h2>
+              </div>
+            </div>
+          )
+        }
+        {active === 'manual' && <ManualResult/>}
+        {active === 'csv' && <CsvResult/>}
       </div>
-      {manual ? <ManualResult /> : null}
-      {Csv ? <CsvResult /> : null}
     </div>
   );
 };
