@@ -8,7 +8,7 @@ import { FiUpload } from "react-icons/fi";
 
 // images
 import ManualImage from "./images/Manually.png";
-import ExcelImage from './images/Excel.png';
+import ExcelImage from "./images/Excel.png";
 
 const Result = () => {
   const [manual, setManual] = useState(false);
@@ -43,7 +43,6 @@ const Result = () => {
             <p>Export</p>
           </div>
         </div>
-
         {
           active === null && (
             <div className="cards">
