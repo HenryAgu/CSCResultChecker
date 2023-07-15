@@ -127,7 +127,7 @@ const Dashboard = () => {
               </div>
             </div>
             <div className="result inner_cards">
-              <div className="hcard" onClick={() => handleToggle("resultPage")}>
+              <div className="hcard">
                 <img src={results} alt="result" />
                 <h2>Result</h2>
                 <h3>400</h3>
@@ -138,7 +138,7 @@ const Dashboard = () => {
               </div>
             </div>
             <div className="admin inner_cards">
-              <div className="hcard" onClick={() => handleToggle("adminPage")}>
+              <div className="hcard">
                 <img src={admin} alt="admin" />
                 <h2>Admins</h2>
                 <h3>2</h3>

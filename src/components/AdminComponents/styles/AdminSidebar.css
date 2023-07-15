@@ -16,7 +16,6 @@
   padding: 10px 11px;
   padding-left: 30px;
   margin: 10px;
-  margin-bottom: 20px;
   width: 90%;
   border-radius: 16px;
   text-decoration: none;
@@ -65,6 +64,49 @@
 
 a {
   text-decoration: none;
+}
+
+.signout{
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  padding: 15px 11px;
+  padding-left: 40px;
+  margin-top: 100px;
+  width: 90%;
+  border-radius: 16px;
+  text-decoration: none;
+  transition: all 0.8s ease;
+}
+
+.signout:hover,.signout:focus{
+  cursor: pointer;
+  background: #5d5fef;
+  border-radius: 16px;
+  text-decoration: none;
+  outline: none;
+}
+
+.signout_icon{
+  font-size: 25px;
+  color: #737791;
+}
+
+.signout:hover .signout_icon,.signout:active .signout_icon,.signout:focus .signout_icon{
+  color: #FFF;
+}
+.signout span{
+  color: #737791;
+  font-family: 'Poppins';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  text-decoration: none;
+  outline: none;
+}
+
+.signout:hover span,.signout:active span,.signout:focus span{
+  color: #FFF;
 }
 
 .mainbody {

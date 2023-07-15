@@ -50,11 +50,6 @@ const AdminSidebar = () => {
       name: "Admin",
       icon: <FiUserCheck />,
     },
-    {
-      path: "/",
-      name: "Sign Out",
-      icon: <FiLogOut />,
-    },
   ];
 
   const handleClick = (path) => {
@@ -74,8 +69,6 @@ const AdminSidebar = () => {
         return <CoursesPage />;
       case "/studentadmin":
         return <AdminPage />;
-    case "/":
-        return <Home/>;
       default:
         return <DashboardPage />;
     }
@@ -85,16 +78,24 @@ const AdminSidebar = () => {
     <div className="mainbody">
       <div className="sidebar">
         {sideItems.map((item, index) => (
-          <div
-            key={index}
-            className="itemBody"
-            activeClassName = "active"
-            onClick={() => handleClick(item.path)}
-          >
-            <div className="itemIcon">{item.icon}</div>
-            <h3 className="itemName">{item.name}</h3>
-          </div>
+          <>
+            <div
+              key={index}
+              className="itemBody"
+              activeClassName="active"
+              onClick={() => handleClick(item.path)}
+            >
+              <div className="itemIcon">{item.icon}</div>
+              <h3 className="itemName">{item.name}</h3>
+            </div>
+          </>
         ))}
+        <NavLink to="/">
+          <div className="signout">
+            <FiLogOut className="signout_icon" />
+            <span className="signout_name">Sign Out</span>
+          </div>
+        </NavLink>
       </div>
       <div className="mainbar">{render(path)}</div>
     </div>
