@@ -4,7 +4,7 @@ import UpdateCourses from "./UpdateCourses";
 import "./style/courses.css";
 
 // React icon
-import { FiUpload, FiArrowRight } from "react-icons/fi";
+import { FiUpload } from "react-icons/fi";
 
 // images
 import AddCourse from "./images/AddCourse.png";

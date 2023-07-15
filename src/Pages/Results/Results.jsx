@@ -1,35 +1,52 @@
-import { useState } from 'react';
-import ManualResult from './ManualResult'
-import CsvResult from './CsvResult'
+import { useState } from "react";
+import ManualResult from "./ManualResult";
+import CsvResult from "./CsvResult";
 import "./style/Results.css";
 
-const Result = () => {
-    const [manual, setManual] =useState(false) 
-    const [Csv, setCsv] =useState(false) 
+// React icon
+import { FiUpload } from "react-icons/fi";
 
-    const handleClick = () => {
-      setManual(!manual)
-    }
-    const handleClick2 = () => {
-      setCsv(!Csv)
-    }
+// images
+import ManualImage from "./images/Manually.png";
+import ExcelImage from './images/Excel.png';
+
+const Result = () => {
+  const [manual, setManual] = useState(false);
+  const [Csv, setCsv] = useState(false);
+
+  const handleClick = () => {
+    setManual(true);
+  };
+  const handleClick2 = () => {
+    setCsv(true);
+  };
 
   return (
-    <div>
-        <div className='ResultHeader'>
-            <h2>Results</h2>
+    <div className="resultContainer">
+      <div className="ResultHeader">
+        <div className="header_text">
+          <h2>Students</h2>
         </div>
+        <div className="export" onClick={() => handleToggle("resultPage")}>
+          <FiUpload className="export_icon" />
+          <p>Export</p>
+        </div>
+      </div>
 
-        <div style={{display: manual ||Csv ?'none' : 'flex' }}className="ResultBoxes">
-            <div className="rboxes" onClick={handleClick}><p className="rpara">Add Result Manually</p></div>
-            <div className="rboxes" onClick={handleClick2}><p className="rpara">Add with excel sheet</p></div>
+      <div className="cards" style={{ display: manual || Csv ? "none" : "flex" }}>
+        <div className="carddivs course_carddivs" onClick={handleClick} >
+          <div className="course_cards add_course">
+            <img src={ManualImage} alt="Manual" />
+            <h2>Add new student</h2>
+          </div>
+          <div className="course_cards update_course" onClick={handleClick2}>
+            <img src={ExcelImage} alt="Excel" />
+            <h2>Update student</h2>
+          </div>
         </div>
-       {
-        manual ? <ManualResult/> : null
-       }
-       {
-        Csv ? <CsvResult/> : null
-       }
+      </div>
+      {manual ? <ManualResult /> : null}
+      {Csv ? <CsvResult /> : null}
     </div>
   );
 };

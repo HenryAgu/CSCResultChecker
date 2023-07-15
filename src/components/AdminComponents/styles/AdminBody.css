@@ -2,7 +2,10 @@
 .adBody{
     width: 100%;
 }
-
+.mainbar{
+    width: calc(200% - 300px);
+    margin-left: 300px;
+}
 .mainname{
     display: flex;
     justify-content: center;

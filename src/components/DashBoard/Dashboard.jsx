@@ -16,6 +16,7 @@ import admin from "./images/admin.png";
 import course from "./images/course.png";
 import student from "./images/student.png";
 import results from "./images/Result.png";
+import LearnMore from "./images/learn-more.png";
 
 const Dashboard = () => {
   const [studentPage, setStudentPage] = useState(false);
@@ -97,6 +98,16 @@ const Dashboard = () => {
             <FiUpload className="export_icon" />
             <p>Export</p>
           </div>
+        </div>
+        <div className="learn_more">
+          <div className="learn_more_left">
+            <h1>You can now release batch-result</h1>
+            <h4>Student result compilation made easy, you can now do that with just a click.</h4>
+            <button onClick={() => handleToggle("resultPage")}>Learn More</button>
+          </div>
+          {/* <div className="learn_more_right">
+            <img src={LearnMore} alt="Learn-more" />
+          </div> */}
         </div>
         <div className="cards">
           <div className="carddivs">

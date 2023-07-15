@@ -1,67 +1,16 @@
+.resultContainer{
+    margin-top: 100px;
+    height: 120vh;
+    padding: 0 20px;
+    padding-right: 35px;
+    background-color: #f9fafb;
+}
+
 .ResultHeader{
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 70px;
-    background: #f0efef;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-    font-family: 'DM Sans', sans-serif;
-}
-
-.ResultBoxes{
-    display: flex;
-    justify-content: space-around;
-    padding: 10px;
-}
-
-.rboxes{
-    display: flex;
-    background-color: #add8e6;
-    border-radius: 5px;
-    color: white;
-    font-weight: bold;
-    font-size: 15px;
-    padding: 10px;
-    cursor: pointer;
-    width: 400px;
-    height: 100px;
-    position: relative;
-}
-
-.rboxes:hover{
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    transition: .8s ease;
-}
-
-.rboxes::before{
-    content: '';
-    position : absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 0;
-    border-left: 3px solid transparent;
-    border-bottom: 3px solid transparent;
-    transition: all .8s ease;
-}
-
-.rboxes::after{
-    content: '';
-    position : absolute;
-    right: 0;
-    top: 0;
-    width: 0;
-    height: 0;
-    box-sizing: border-box;
-    border-right: 3px solid transparent;
-    border-top: 3px solid transparent;
-    transition: all .8s ease;
-}
-
-.rboxes:hover::before,.rboxes:hover::after{
-    border-color: #1c2767;
-    width: 100%;
-    height: 100%;
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 @media(max-width: 600px){
