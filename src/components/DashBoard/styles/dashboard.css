@@ -110,14 +110,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  column-gap: 30px;
+  column-gap: 20px;
 }
 
 .inner_cards {
   display: flex;
   flex-direction: column;
   padding: 30px 20px;
-  width: 100%;
+  width: 300px;
+  height: 300px;
   border-radius: 28.698px;
 }
 
