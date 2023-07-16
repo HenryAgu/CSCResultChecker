@@ -34,16 +34,16 @@ const Students = () => {
         </div>
       </div>
 
-      <div className="cards" style={{display: add || update ? 'none' : 'block' }}>
+      <div className="cards" style={{display: add || update ? 'none' : 'flex' }}>
         <div className="carddivs course_carddivs" onClick={handleAdd} >
           <div className="course_cards add_course">
             <img src={AddStudentImage} alt="Add student" />
             <h2>Add new student</h2>
           </div>
-          <div className="course_cards update_course" onClick={handleUpdate}>
-            <img src={UpdateStudentImage} alt="Update student" />
-            <h2>Update student</h2>
           </div>
+        <div className="course_cards update_course" onClick={handleUpdate}>
+          <img src={UpdateStudentImage} alt="Update student" />
+          <h2>Update student</h2>
         </div>
       </div>
       {add ? <AddStudent /> : null}

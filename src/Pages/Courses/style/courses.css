@@ -17,12 +17,16 @@
     justify-content: space-around;
 }
 
+.cards{
+    display: flex;
+    justify-content: space-around;
+}
+
 .course_cards{
     display: flex;
     flex-direction: column;
     align-items:center ;
-    padding: 30px 10px;
-    width: 30%;
+    padding: 30px 60px;
     border-radius: 28.698px;
     cursor: pointer;
 }
@@ -39,6 +43,7 @@
 
 .add_course{
     background: #FFF4DE;
+    /* border: 1px solid red; */
 }
 
 .update_course{

@@ -11,7 +11,7 @@ const UpdateCourses = () => {
   return (
     <div className="courseMain">
       <div className="courseCard">
-        <h2 className="description">Remove Courses</h2>
+        <h2 className="description">Update Course</h2>
         <hr/>
         <form className="courseform">
           <label className="levelLabel">
@@ -35,7 +35,7 @@ const UpdateCourses = () => {
           <div className="courseInputTab">
             <input className="courseInput" type='text' placeholder="Enter course name" name="course-input"/> 
           </div>
-          <button className="btn" type="submit">Add</button>
+          <button className="btn" type="submit">Update</button>
         </form>
       </div>
     </div>

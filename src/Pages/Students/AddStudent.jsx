@@ -41,7 +41,7 @@ const AddStudent = () => {
                 </div>
                 </label> 
                 <div className="studentInputTab">
-                <input className="studentInput" type='text' placeholder="Enter student's last name" name="student-middle-name"/> 
+                <input className="studentInput" type='text' placeholder="Enter student's middle name" name="student-middle-name"/> 
                 </div>
 
                 <label>

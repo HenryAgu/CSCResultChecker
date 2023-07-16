@@ -30,7 +30,7 @@ const AddAdmin = () => {
                     </div>
                     </label> 
                     <div className="sAdminInputTab">
-                    <input className="sAdminInput" type='text' placeholder="Enter Admin's last name" name="sAdmin-middle-name"/> 
+                    <input className="sAdminInput" type='text' placeholder="Enter Admin's middle name" name="sAdmin-middle-name"/> 
                     </div>
                     
                     <button className="btn" type="submit">Add</button>
