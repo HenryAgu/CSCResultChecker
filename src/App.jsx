@@ -1,6 +1,7 @@
 // react router dom
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+
 import "./App.css";
 
 // components
@@ -21,6 +22,7 @@ import StudentAdmin from "./Pages/StudentAdmin/StudentAdmin";
 import ProtectedRoutes from "./utils/ProtectedRoutes";
 
 function App() {
+
   return (
     <>
       <main>
