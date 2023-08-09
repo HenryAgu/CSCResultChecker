@@ -10,21 +10,80 @@ import { NavLink } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import {useState} from 'react'
+import axios from 'axios';
+
 const Register = () => {
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [middleName, setMiddleName] = useState('');
+  const [matNumber, setMatNumber] = useState('');
+  const [Email, setEmail] = useState('');
+  const [yearOfEnrollment, setEnrollment] = useState();
+  const [errorMessage, setErrorMessage] = useState('');
+  const [isError, setError] = useState(false);
+  const [responseBody, setResBody] = useState('');
+  const [formBody, setFormBody] = useState({
+    firstName:'',
+    lastName: '',
+    middleName: '',
+    matNo :'',
+    studentEmail: '',
+    enrollmentYear: 0
+  })
+
+  const URL = 'http://localhost:4000/students';
+  const handleInputChange = event => {
+    const {name, value} = event.target;
+    const newValue = name === 'enrollMentYear' ? parseInt(value) : value;
+    setFormBody((prevData)=>({
+      ...prevData,
+      [name]: newValue
+    }))
+  }
+
+  console.log(formBody);
+  
+  // const handleYearInput = (event) =>{
+  //   event.preventDefault()
+  //   const year = event.target.value
+  //   setEnrollment(parseInt(year))
+  // }
+
+  // const data = { 
+  //   firstName, 
+  //   lastName, 
+  //   middleName, 
+  //   matNo: matNumber, 
+  //   studentEmail: Email, 
+  //   enrollmentYear: yearOfEnrollment 
+  // }
+  // console.log(data);
 
   // register form submit function
-  const handleRegister = (event) => {
+  const handleRegister = async (event) => {
     event.preventDefault();
-    toast.success('Successful! OTP sent to mail', {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-      });
+    try {
+      const response = axios.post(URL, formBody)
+       .then(res => {
+        console.log(res.data);
+       })
+       .catch(error => error.response.data)
+      console.log(response.data);
+
+      toast.success('Successful! OTP sent to mail', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        });
+    } catch (error){
+      console.log(error)
+    }
   }
   return (
     <main className='register'>
@@ -34,30 +93,44 @@ const Register = () => {
       <p>Create your account now!</p>
       <form className="register_form" onSubmit={handleRegister}>
         <div className="inner_form">
-          <label htmlFor="">Full Name</label>
-          <input type="name" placeholder="Enter Full name" required />
+          <label htmlFor="">First Name</label>
+          <input type="name" name='firstName' placeholder="Enter Full name" id="firstName" value={formBody.firstName} onChange={handleInputChange} required/>
+        </div>
+        <div className="inner_form">
+          <label htmlFor="">Middle Name</label>
+          <input type="name" name='middleName' placeholder="Enter Full name" id="middleName" value={formBody.middleName} onChange={handleInputChange} required/>
+        </div>
+        <div className="inner_form">
+          <label htmlFor="">Last Name</label>
+          <input type="name" name='lastName' placeholder="Enter Full name" id="lastName" value={formBody.lastName} onChange={handleInputChange} required/>
         </div>
         <div className="inner_form">
           <label htmlFor="">Mat Number</label>
-          <input type="name" placeholder="Enter Matriculation Number" required />
+          <input type="name" name='matNo' placeholder="Enter Matriculation Number" id="matNumber" value={formBody.matNo} onChange={handleInputChange} required />
         </div>
         <div className="inner_form">
           <label htmlFor="">Email</label>
-          <input type="email" placeholder="Enter School Email" required />
+          <input type="email" name='studentEmail'placeholder="Enter School Email" id="email" value={formBody.studentEmail} onChange={handleInputChange} required />
         </div>
         <div className="inner_form">
           <label htmlFor="">Year Of Enrollment</label>
-          <select id="my-dropdown" name="dropdown" defaultValue="default" required>
+          <select id="my-dropdown" name="enrollmentYear" defaultValue={formBody.enrollmentYear} onChange={handleInputChange} required>
           <option value="default">----Select A Year----</option>
-            <option value="option1">2018</option>
-            <option value="option2">2019</option>
-            <option value="option3">2020</option>
-            <option value="option4">2021</option>
-            <option value="option4">2022</option>
-            <option value="option4">2023</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
           </select>
         </div>
-        <button>Register</button>
+        <button type='submit'>Register</button>
+        <div>
+          { isError?
+            <div className="reg_error"> {errorMessage}</div>:
+            null
+          }
+        </div>
       </form>
       <div className="register_section">
         <span>
