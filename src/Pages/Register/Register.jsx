@@ -32,7 +32,7 @@ const Register = () => {
     enrollmentYear: 0
   })
 
-  const URL = 'http://localhost:4000/students';
+  const URL = 'https://result-backend.onrender.com/students';
   const handleInputChange = event => {
     const {name, value} = event.target;
     const newValue = name === 'enrollMentYear' ? parseInt(value) : value;
