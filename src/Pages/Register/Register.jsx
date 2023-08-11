@@ -22,6 +22,7 @@ const Register = () => {
   const [yearOfEnrollment, setEnrollment] = useState();
   const [errorMessage, setErrorMessage] = useState('');
   const [isError, setError] = useState(false);
+  const [isValid, setIsValid] = useState(false);
   const [responseBody, setResBody] = useState('');
   const [formBody, setFormBody] = useState({
     firstName:'',
@@ -32,11 +33,6 @@ const Register = () => {
     enrollmentYear: 0
   })
 
-  const URL = 'https://result-backend.onrender.com/students';
-  const handleInputChange = event => {
-    const {name, value} = event.target;
-    const newValue = name === 'enrollMentYear' ? parseInt(value) : value;
-    setFormBody((prevData)=>({
   const URL = "https://result-backend.onrender.com/students";
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -169,7 +165,7 @@ const Register = () => {
           />
         </div>
           <span className="email_verification">
-          {!isValid && <span>Email must include "uniport.com"</span> }
+          {!isValid && <span>Email must include "uniport.edu.ng"</span> }
           </span>
         <div className="inner_form">
           <label htmlFor="">Year Of Enrollment</label>

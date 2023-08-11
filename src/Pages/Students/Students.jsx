@@ -23,7 +23,7 @@ const Students = () => {
 
   const handleDelete = () => {
     setPageToDisplay("delete student");
-    setPage(page - 1);
+    setPage(page + 1);
   }
 
   const handleUpdate = () => {
@@ -71,11 +71,14 @@ const Students = () => {
 
   const componentList = [
     <HandleStudentOption />,
-    pageToDisplay == "add new student" ? (
+    pageToDisplay === "add new student" ? (
       <AddStudent page={page} setPage={setPage} />
+    ) : pageToDisplay === "delete student" ? (
+      <DeleteStudent page={page} setPage={setPage} />
     ) : (
-      <UpdateStudent page={page} setPage={setPage} />
-    ),
+      <UpdateStudent page={page} setPage={setPage} />
+    ),
+  
   ];
   //   style={{display: value || value2 ?'none' : 'flex' }}
   return <div className="studentContainer">{componentList[page]}</div>;

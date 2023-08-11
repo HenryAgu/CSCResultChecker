@@ -1,0 +1,61 @@
+.deleteCard{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.delete_form{
+    padding: 20px;
+    margin: 50px 0;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.delete_form button{
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background-color: #425166;
+    transition: all 0.2 ease-in-out;
+}
+
+.student_info{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.student_info h3{
+    color: #425166;
+}
+
+.student_info span{
+    font-weight: 500;
+    color: #000;
+}
+
+.student_info button{
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 10px 20px;
+    width: fit-content;
+    margin-top: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background-color: #ff0000;
+    transition: all 0.2 ease-in-out;
+}
+
+.student_info button:hover{
+    background-color: #ff5252;
+}

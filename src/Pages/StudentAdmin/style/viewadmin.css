@@ -1,3 +1,28 @@
 .main_view{
     margin: 20px;
 }
+
+  table {
+    width: 100%;
+  }
+  th, td {
+    border: 1px solid #ccc;
+    text-align: center;
+  }
+  th {
+    background-color: #f2f2f2;
+    color: #425166;
+    font-weight: bold;
+  }
+  .delete_button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    font-size: 16px;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+
+

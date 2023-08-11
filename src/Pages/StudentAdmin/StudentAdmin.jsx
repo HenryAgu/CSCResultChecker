@@ -50,8 +50,8 @@ const StudentAdmin = () => {
       </div>
 
       <div className="cards" style={{ display: value || value2 || value3 ? "none" : "flex" }}>
-        <div className="carddivs course_carddivs" onClick={handleClick} >
-          <div className="course_cards add_admin">
+        <div className="carddivs course_carddivs" >
+          <div className="course_cards add_admin" onClick={handleClick}>
             <img src={AddAdminImage} alt="Add Admin" />
             <h2>Add an admin</h2>
           </div>
