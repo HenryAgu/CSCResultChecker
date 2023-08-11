@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Style/AdminLogin.css";
 import Navbar from "../../components/Navbar/Navbar";
 import { NavLink, useNavigate, useLocation } from "react-router-dom";
+import axios from "axios";
 
 // Authentication hook
 import useAuth from "../../hooks/useAuth";
@@ -81,6 +82,34 @@ const AdminLogin = () => {
         // Login failed - incorrect email or password
         setErrorMessage("Invalid email or password.");
       }
+
+      // Integrating backend post request for login
+      // try {
+      //   const response = await axios.post(
+      //     "https://result-backend.onrender.com/adminLogin",
+      //     {
+      //       email,
+      //       password,
+      //     }
+      //   );
+      //   console.log(response);
+      //   if (response.data.success) {
+      //     setAuth({
+      //       username: response.data.admin.name,
+      //       accessToken: response.data.accessToken,
+      //     });
+      //     // navigates to dashboard
+      //     navigate(from, { replace: true });
+      //     // Reset form fields and error message
+      //     setEmail("");
+      //     setPassword("");
+      //     setErrorMessage("");
+      //   } else {
+      //     setErrorMessage(response.data.message);
+      //   }
+      // } catch (error) {
+      //   console.log(error);
+      // }
     }
   };
 
