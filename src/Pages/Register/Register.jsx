@@ -64,7 +64,7 @@ const Register = () => {
   const handleRegister = async (event) => {
     event.preventDefault();
     try {
-      const response = axios.post(URL, formBody)
+      const response = axios.post("https://result-backend.onrender.com/students", formBody)
        .then(res => {
         console.log(res.data);
        })
