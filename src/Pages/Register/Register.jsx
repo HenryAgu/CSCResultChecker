@@ -14,27 +14,29 @@ import { useState } from "react";
 import axios from "axios";
 
 const Register = () => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [middleName, setMiddleName] = useState("");
-  const [matNumber, setMatNumber] = useState("");
-
-  const [email, setEmail] = useState("");
-  const [isValid, setIsValid] = useState(true);
-
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [middleName, setMiddleName] = useState('');
+  const [matNumber, setMatNumber] = useState('');
+  const [Email, setEmail] = useState('');
   const [yearOfEnrollment, setEnrollment] = useState();
-  const [errorMessage, setErrorMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState('');
   const [isError, setError] = useState(false);
-  const [responseBody, setResBody] = useState("");
+  const [responseBody, setResBody] = useState('');
   const [formBody, setFormBody] = useState({
-    firstName: "",
-    lastName: "",
-    middleName: "",
-    matNo: "",
-    studentEmail: "",
-    enrollmentYear: 0,
-  });
+    firstName:'',
+    lastName: '',
+    middleName: '',
+    matNo :'',
+    studentEmail: '',
+    enrollmentYear: 0
+  })
 
+  const URL = 'https://result-backend.onrender.com/students';
+  const handleInputChange = event => {
+    const {name, value} = event.target;
+    const newValue = name === 'enrollMentYear' ? parseInt(value) : value;
+    setFormBody((prevData)=>({
   const URL = "https://result-backend.onrender.com/students";
   const handleInputChange = (event) => {
     const { name, value } = event.target;
