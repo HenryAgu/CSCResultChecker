@@ -50,7 +50,7 @@ const UpdateStudent = ({page, setPage}) => {
         </div>
         <h2 className="studentdesc">Update student</h2>
         <hr />
-        <form className="studentform">
+        <form className="studentform ">
           <label>
             <div className="studentStyle">Last Name:</div>
           </label>

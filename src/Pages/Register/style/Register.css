@@ -65,6 +65,16 @@
   caret-color: #1c2767;
 }
 
+.email_verification span{
+  display: flex;
+  justify-content: left;
+  text-align: left;
+  color: green;
+  font-size: 15px;
+  font-weight: 500;
+  margin: 5px 0;
+}
+
 .inner_form input:focus,.inner_form select:focus {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }

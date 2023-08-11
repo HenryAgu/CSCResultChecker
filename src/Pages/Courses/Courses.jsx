@@ -5,10 +5,14 @@ import "./style/courses.css";
 
 // React icon
 import { FiUpload } from "react-icons/fi";
+import { MdKeyboardBackspace } from "react-icons/md";
 
 // images
 import AddCourse from "./images/AddCourse.png";
 import UpdateCourse from "./images/UpdateCourse.png";
+
+// NavLink
+import { NavLink } from "react-router-dom";
 
 const Courses = () => {
   const [pageToDisplay, setPageToDisplay] = useState("");
