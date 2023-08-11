@@ -5,6 +5,7 @@ nav {
   background-color: #144a77;
   position: fixed;
   width: 100%;
+  z-index: 999;
 }
 
 .inner_nav {
