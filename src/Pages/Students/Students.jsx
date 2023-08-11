@@ -9,6 +9,8 @@ import { FiUpload } from "react-icons/fi";
 // images
 import AddStudentImage from "./images/AddStudent.png";
 import UpdateStudentImage from "./images/UpdateStudent.png";
+import deleteStudentImage from "./images/DeleteAdmin.png";
+import DeleteStudent from "./DeleteStudent";
 
 const Students = () => {
   const [pageToDisplay, setPageToDisplay] = useState("");
@@ -18,6 +20,11 @@ const Students = () => {
     setPageToDisplay("add new student");
     setPage(page + 1);
   };
+
+  const handleDelete = () => {
+    setPageToDisplay("delete student");
+    setPage(page - 1);
+  }
 
   const handleUpdate = () => {
     setPageToDisplay("update a student");
@@ -45,6 +52,12 @@ const Students = () => {
             <div className="course_cards add_course">
               <img src={AddStudentImage} alt="Add student" />
               <h2>Add new student</h2>
+            </div>
+          </div>
+          <div className="carddivs course_carddivs" onClick={handleDelete}>
+            <div className="course_cards add_course">
+              <img src={deleteStudentImage} alt="delete student" />
+              <h2>Delete student</h2>
             </div>
           </div>
           <div className="course_cards update_course" onClick={handleUpdate}>
