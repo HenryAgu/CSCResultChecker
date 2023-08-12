@@ -32,6 +32,15 @@ const AddAdmin = () => {
                     <div className="sAdminInputTab">
                     <input className="sAdminInput" type='text' placeholder="Enter Admin's middle name" name="sAdmin-middle-name"/> 
                     </div>
+
+                    <label>
+                    <div className="sAdminStyle">
+                        Secret Key:<span>*</span>
+                    </div>
+                    </label> 
+                    <div className="sAdminInputTab">
+                    <input className="sAdminInput" type='text' placeholder="Enter Secret key" name="" required/> 
+                    </div>
                     
                     <button className="btn" type="submit">Add</button>
                 </form>
