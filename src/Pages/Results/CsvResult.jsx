@@ -8,6 +8,10 @@ import axios from 'axios';
 // react icons
 import { BsFillSendFill } from "react-icons/bs";
 
+// Toastify
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const CsvResult = ({ page, setPage }) => {
   const [uploadedData, setUploadedData] = useState(null);
   const [matNo, setMatNo] = useState('')
@@ -99,6 +103,16 @@ const CsvResult = ({ page, setPage }) => {
   console.log(matNo);
 
   const sendData = () => {
+    toast.success("Result Uploaded!", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
     setError(false)
       if (gradeData.length === 0 && matNo === ''){
         setError(true)
@@ -199,6 +213,7 @@ const CsvResult = ({ page, setPage }) => {
       </div>
       {error ? <div className='excelErr'><p>Please upload an excel sheet</p></div>: null}
       <button className='excelSendButton' onClick={sendData}><span>Send Uploaded File</span><BsFillSendFill className="send_button"/></button>
+      <ToastContainer/>
     </>
   );
 };

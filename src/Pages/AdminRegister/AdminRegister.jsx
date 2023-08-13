@@ -198,6 +198,16 @@ const AdminRegister = () => {
               />
               <label className="input-label">Confirm Password</label>
             </div>
+            <div className="input">
+              <input
+                type="text"
+                className="input-field"
+                name="secretKey"
+                onChange={handleChange}
+                required
+              />
+              <label className="input-label">Secret Key</label>
+            </div>
             {errors.passwordConfirm && (
               <span className="error-message">{errors.passwordConfirm}</span>
             )}
