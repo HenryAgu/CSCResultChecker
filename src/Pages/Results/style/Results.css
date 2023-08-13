@@ -1,3 +1,7 @@
+body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
 .resultContainer {
   margin-top: 100px;
   height: 120vh;
@@ -83,7 +87,7 @@
 }
 
 .uploaded-file {
-  width: 100vw;
+  width: 70vw;
   height: 100vh;
   margin-top: 20px;
   text-align: center;
@@ -132,5 +136,37 @@
 
 .Excel_form{
     background-color: #DCFCE7;
+}
+
+.excelSendButton{
+  width: 150px;
+  padding: 12px;
+  font-weight: bold;
+  font-size: 15px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  color: white;
+  background: #1c2767;
+  float: left;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+
+.excelSendButton:active{
+  background-color: lightblue;
+  color: black;
+}
+.excelErr{
+  float: left;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  color: red;
+  font-size: 20px;
+}
+
+
+body::-webkit-scrollbar{
+  display: none
 }
 

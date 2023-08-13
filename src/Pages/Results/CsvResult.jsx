@@ -1,23 +1,118 @@
 import { useState } from "react";
 import { useDropzone } from "react-dropzone";
 import csv from "csvtojson";
+import * as XLSX from 'xlsx';
 import "./style/Results.css";
+import axios from 'axios';
 
 const CsvResult = ({ page, setPage }) => {
   const [uploadedData, setUploadedData] = useState(null);
+  const [matNo, setMatNo] = useState('')
+  const [gradeData, setGradeData] = useState([]);
+  const [error, setError] = useState(false);
+
+  const URL = 'http://localhost:4000/results'
 
   const handleFileUpload = (acceptedFiles) => {
     const file = acceptedFiles[0];
     const reader = new FileReader();
 
     reader.onload = async (e) => {
-      const csvData = e.target.result;
-      const jsonData = await csv().fromString(csvData);
+      const data = new Uint8Array(e.target.result);
+      const wb = XLSX.read(data, {type: 'array'});
+      // Assuming the first sheet is the one you want to work with
+      const firstSheetName = wb.SheetNames[0];
+      const firstSheet = wb.Sheets[firstSheetName];
+
+      // Convert the sheet to JSON
+      const jsonData = XLSX.utils.sheet_to_json(firstSheet);
+      const filteredData = jsonData.filter(row => Object.keys(row).length > 3);
+
+
+      const courseInfo = jsonData.slice(3).map((row) => ({
+        rowNumber: jsonData.indexOf(row) + 1,
+        length: row.length,
+        matNo: row[3],
+        courseCode: row[1],
+        courseTitle: row[2],
+        cu: row[4],
+        score: row[6],
+        // ... other relevant columns
+      }));
+
+
+      const headers = jsonData[3]; 
+
+      // Extract course data
+      const courseData = jsonData.slice(9); // Start from row 9
+
+      //console.log('Student Information:', studentInfo);
+      console.log('Course Data:', courseData);
+      console.log('Headers:', headers);
+      console.log('MatNo header:', headers.__EMPTY_6)
+
+      const matricNumber = headers.__EMPTY_6
+
+      const matNo = matricNumber.split(': ')
+
+      console.log('My no:',matNo[1])
+      console.log(typeof matNo[1])
+
+      // const newCourseData = courseData.filter(item => {
+      //   return '__EMPTY' in item && '__EMPTY_1' in item && '__EMPTY_7' in item
+      // })
+
+      const newCourseData = courseData.filter(item => {
+        return (
+          '__EMPTY' in item &&
+          '__EMPTY_1' in item &&
+          '__EMPTY_7' in item &&
+          item['UNIVERSITY OF PORT HARCOURT'] !== 'S/No'
+        );
+      });
+      
+
+      const electiveCourseObject = courseData.find(item => {
+        return item['__EMPTY_1'] === 'ELECTIVE COURSES';
+      });
+      
+      console.log('Elective Course Object:', electiveCourseObject);
+      
+      
+
+      console.log('Actual Grade Info:', newCourseData);
+      //console.log('Actual Grade Info Two:', newCourseDataTwo);
+      
+      setMatNo(matNo[1]);
+      setGradeData(newCourseData)
+      //console.log(courseDataWithMeaningfulKeys)
+
       setUploadedData(jsonData);
     };
 
-    reader.readAsText(file);
+    reader.readAsArrayBuffer(file);;
   };
+  console.log(gradeData);
+  console.log(matNo);
+
+  const sendData = () => {
+    setError(false)
+      if (gradeData.length === 0 && matNo === ''){
+        setError(true)
+      } else{
+        console.log('value')
+      // const response = axios
+    //     .post(URL, formBody)
+    //     .then((res) => {
+    //       console.log(res.data);
+    //     })
+    //     .catch((error) => error.response.data);
+    //   console.log(response.data);
+      }
+  }
+  
+
+  console.log(error)
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop: handleFileUpload,
@@ -65,7 +160,7 @@ const CsvResult = ({ page, setPage }) => {
           {...getRootProps()}
           className={`dropzone ${isDragActive ? "active" : ""}`}
         >
-          <input {...getInputProps()} accept=".xlsx,.xls" />
+          <input {...getInputProps()} accept=".xlsx, .xls" />
           {isDragActive ? (
             <p>Drop the file here...</p>
           ) : (
@@ -99,6 +194,8 @@ const CsvResult = ({ page, setPage }) => {
           </div>
         )}
       </div>
+      {error ? <div className='excelErr'>Please upload an excel sheet</div>: null}
+      <button className='excelSendButton' onClick={sendData}>Send Uploaded File</button>
     </>
   );
 };
