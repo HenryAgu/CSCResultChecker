@@ -14,24 +14,24 @@ import { useState } from "react";
 import axios from "axios";
 
 const Register = () => {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [middleName, setMiddleName] = useState('');
-  const [matNumber, setMatNumber] = useState('');
-  const [Email, setEmail] = useState('');
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [middleName, setMiddleName] = useState("");
+  const [matNumber, setMatNumber] = useState("");
+  const [Email, setEmail] = useState("");
   const [yearOfEnrollment, setEnrollment] = useState();
-  const [errorMessage, setErrorMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState("");
   const [isError, setError] = useState(false);
   const [isValid, setIsValid] = useState(false);
-  const [responseBody, setResBody] = useState('');
+  const [responseBody, setResBody] = useState("");
   const [formBody, setFormBody] = useState({
-    firstName:'',
-    lastName: '',
-    middleName: '',
-    matNo :'',
-    studentEmail: '',
-    enrollmentYear: 0
-  })
+    firstName: "",
+    lastName: "",
+    middleName: "",
+    matNo: "",
+    studentEmail: "",
+    enrollmentYear: 0,
+  });
 
   const URL = "https://result-backend.onrender.com/students";
   const handleInputChange = (event) => {
@@ -69,32 +69,54 @@ const Register = () => {
   // register form submit function
   const handleRegister = async (event) => {
     event.preventDefault();
-    try {
-      const response = axios
-        .post(URL, formBody)
-        .then((res) => {
-          console.log(res.data);
-        })
-        .catch((error) => error.response.data);
-      console.log(response.data);
+    console.log(isValid);
+    if (isValid) {
+      try {
+        const response = axios
+          .post(URL, formBody)
+          .then((res) => {
+            console.log(res.data);
+          })
+          .catch((error) => error.response.data);
+        console.log(response.data);
 
-      if (isValid) {
-        toast.success("Successful! OTP sent to mail", {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-        });
-        console.log("Email is valid:", email);
-      } else {
-        console.log("Email is not valid");
+        if (isValid) {
+          toast.success("Successful! OTP sent to mail", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+          console.log("sent");
+          setFormBody({
+            firstName: "",
+            lastName: "",
+            middleName: "",
+            matNo: "",
+            studentEmail: "",
+            enrollmentYear: 0,
+          });
+        } else {
+          console.log("check err log");
+        }
+      } catch (error) {
+        console.log(error);
       }
-    } catch (error) {
-      console.log(error);
+    } else {
+      toast.error("Invalid Email", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
     }
   };
   return (
@@ -107,7 +129,7 @@ const Register = () => {
         <div className="inner_form">
           <label htmlFor="">First Name</label>
           <input
-            type="name"
+            type="text"
             name="firstName"
             placeholder="Enter Full name"
             id="firstName"
@@ -117,21 +139,9 @@ const Register = () => {
           />
         </div>
         <div className="inner_form">
-          <label htmlFor="">Middle Name</label>
-          <input
-            type="name"
-            name="middleName"
-            placeholder="Enter Full name"
-            id="middleName"
-            value={formBody.middleName}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
-        <div className="inner_form">
           <label htmlFor="">Last Name</label>
           <input
-            type="name"
+            type="text"
             name="lastName"
             placeholder="Enter Full name"
             id="lastName"
@@ -139,11 +149,23 @@ const Register = () => {
             onChange={handleInputChange}
             required
           />
+          <div className="inner_form">
+            <label htmlFor="">Middle Name</label>
+            <input
+              type="text"
+              name="middleName"
+              placeholder="Enter Full name"
+              id="middleName"
+              value={formBody.middleName}
+              onChange={handleInputChange}
+              required
+            />
+          </div>
         </div>
         <div className="inner_form">
           <label htmlFor="">Mat Number</label>
           <input
-            type="name"
+            type="text"
             name="matNo"
             placeholder="Enter Matriculation Number"
             id="matNumber"
@@ -164,9 +186,9 @@ const Register = () => {
             required
           />
         </div>
-          <span className="email_verification">
-          {!isValid && <span>Email must include "uniport.edu.ng"</span> }
-          </span>
+        <span className="email_verification">
+          {!isValid && <span>Email must include "uniport.edu.ng"</span>}
+        </span>
         <div className="inner_form">
           <label htmlFor="">Year Of Enrollment</label>
           <select
