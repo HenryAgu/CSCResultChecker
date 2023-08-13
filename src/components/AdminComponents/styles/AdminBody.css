@@ -2,7 +2,13 @@
 .adBody{
     width: 100%;
 }
+.adBody .fix{
+    height: 100%;
+    background-color: red;
+    overflow: hidden;
+}
 .mainbar{
+    height: 100%;
     width: calc(200% - 300px);
     margin-left: 300px;
 }

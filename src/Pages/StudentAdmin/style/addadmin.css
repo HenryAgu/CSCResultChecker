@@ -42,6 +42,10 @@
     font-size:15px;
 }
 
+.sAdminStyle span{
+    color: red;
+}
+
 .btn{
     width: 150px;
     padding: 12px;

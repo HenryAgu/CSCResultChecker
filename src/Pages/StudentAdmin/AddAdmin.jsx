@@ -168,61 +168,21 @@ const AddAdmin = () => {
           <label>
             <div className="sAdminStyle">Middle Name:</div>
           </label>
-          {errors.middleName && (
-            <span className="error">{errors.middleName}</span>
-          )}
           <div className="sAdminInputTab">
             <input
               className="sAdminInput"
               type="text"
               placeholder="Enter Admin's middle name"
-              name="middleName"
-              value={formData.middleName}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <label>
-            <div className="sAdminStyle">Password:</div>
-          </label>
-          {errors.password && <span className="error">{errors.password}</span>}
-          <div className="sAdminInputTab">
-            <input
-              className="sAdminInput"
-              type="password"
-              placeholder="Enter admin password"
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <label>
-            <div className="sAdminStyle">Comfirm Password:</div>
-          </label>
-          {errors.passwordConfirm && (
-            <span className="error-message">{errors.passwordConfirm}</span>
-          )}
-          <div className="sAdminInputTab">
-            <input
-              className="sAdminInput"
-              type="password"
-              placeholder="comfirm password"
-              name="passwordConfirm"
-              value={formData.passwordConfirm}
-              onChange={handleChange}
-              required
+              name="sAdmin-middle-name"
             />
           </div>
 
-          <button className="btn" type="submit"  disabled={hasErrors()}>
+          <button className="btn" type="submit">
             Add
           </button>
         </form>
       </div>
-      <ToastContainer />
     </div>
   );
 };
-
 export default AddAdmin;
