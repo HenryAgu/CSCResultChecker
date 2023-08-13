@@ -40,7 +40,7 @@ const Result = () => {
               <h2>Add new Result</h2>
             </div>
           </div>
-          <div className="result_cards Excel_form" onClick={Click2}>
+          <div className="result_cards Excel_form update_result" onClick={Click2}>
             <img src={ExcelImage} alt="Excel" />
             <h2>Enter Result Sheet</h2>
           </div>

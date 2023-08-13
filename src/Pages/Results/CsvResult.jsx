@@ -5,6 +5,9 @@ import * as XLSX from 'xlsx';
 import "./style/Results.css";
 import axios from 'axios';
 
+// react icons
+import { BsFillSendFill } from "react-icons/bs";
+
 const CsvResult = ({ page, setPage }) => {
   const [uploadedData, setUploadedData] = useState(null);
   const [matNo, setMatNo] = useState('')
@@ -194,8 +197,8 @@ const CsvResult = ({ page, setPage }) => {
           </div>
         )}
       </div>
-      {error ? <div className='excelErr'>Please upload an excel sheet</div>: null}
-      <button className='excelSendButton' onClick={sendData}>Send Uploaded File</button>
+      {error ? <div className='excelErr'><p>Please upload an excel sheet</p></div>: null}
+      <button className='excelSendButton' onClick={sendData}><span>Send Uploaded File</span><BsFillSendFill className="send_button"/></button>
     </>
   );
 };

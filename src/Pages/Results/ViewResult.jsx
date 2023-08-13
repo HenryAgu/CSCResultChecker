@@ -401,7 +401,7 @@ const ViewResult = () => {
             </div>
             <div className="inner_form">
               <label htmlFor="">Enrollment Year:</label>
-              <input type="text" placeholder="Enter Enrollment Year" required />
+              <input type="number" placeholder="Enter Enrollment Year" required />
             </div>
             <button>Check Result</button>
           </form>
