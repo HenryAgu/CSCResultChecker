@@ -20,6 +20,7 @@ import Courses from "./Pages/Courses/Courses";
 import Students from "./Pages/Students/Students";
 import StudentAdmin from "./Pages/StudentAdmin/StudentAdmin";
 import ProtectedRoutes from "./utils/ProtectedRoutes";
+import ViewResult from "./Pages/Results/ViewResult";
 
 function App() {
 
@@ -56,6 +57,7 @@ function App() {
               <Route exact path="/course" element={<Courses />} />
               <Route exact path="/student" element={<Students />} />
               <Route exact path="/studentadmin" element={<StudentAdmin />} />
+              <Route exact path="/admin/results"element={<ViewResult/>}/>
             </Route>
           </Routes>
           <Footer />

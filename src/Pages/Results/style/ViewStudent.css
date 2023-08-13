@@ -1,0 +1,81 @@
+.view_result{
+    width: 90%;
+    margin: 50px auto;
+    height: 200%;
+    
+}
+
+.view_result p{
+    font-size: 20px;
+    font-weight: 500;
+    margin: 20px auto;
+}
+
+.back{
+    font-weight: 900;
+    font-size: 40px;
+    color: #023047;
+}
+
+/* search user result */
+.search_result{
+    display: flex;
+    justify-content: center;
+    margin: 100px 0;
+}
+
+.search_result form{
+    margin: 50px 0;
+    padding: 50px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 40%;
+}
+
+.inner_form label{
+    color: #023047;
+}
+
+form button{
+    background-color: #023047;
+    padding: 10px 30px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.student_year{
+    display: flex;
+    justify-content: right;
+    text-align: right;
+}
+
+.student_year h3,.result_header h3{
+    padding: 10px 30px;
+    background-color: #A2D2FF;
+    border-radius: 5px;
+    color: #023047;
+}
+
+.result_header{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    margin-bottom: 20px;
+    justify-content: left;
+}
+
+.result_header h3{
+    width: fit-content;
+}
+
+.result_header p{
+    font-weight: 500;
+}
+
+.year_one{
+    margin-bottom: 100px;
+}

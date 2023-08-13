@@ -7,7 +7,7 @@ const AdminBody = () => {
                 <div className='mainname'>
                     <h3>Dashboard</h3>
                 </div>
-                <div>
+                <div className="fix">
                     <Dashboard/>
                 </div>
             </div>
