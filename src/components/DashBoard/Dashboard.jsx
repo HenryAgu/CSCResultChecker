@@ -86,7 +86,7 @@ const Dashboard = () => {
           display:
             studentPage || resultPage || coursesPage || adminPage
               ? "none"
-              : "block",
+              : "inner_dashboard",
         }}
       >
         <div className="AdminHeader">

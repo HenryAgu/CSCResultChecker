@@ -1,7 +1,7 @@
 .sAdminMain{
     display: flex;
     justify-content: center;
-    height: 85vh;
+    height: 200%;
 }
 
 .sAdmindesc{
@@ -10,7 +10,7 @@
 }
 
 .sAdminform{
-    margin-top: 10px;
+    margin: 10px 0;
     padding: 10px;
 }
 
@@ -40,6 +40,10 @@
 .sAdminStyle{
     font-weight: bold;
     font-size:15px;
+}
+
+.sAdminStyle span{
+    color: red;
 }
 
 .btn{
