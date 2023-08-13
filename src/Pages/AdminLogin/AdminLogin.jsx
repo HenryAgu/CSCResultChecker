@@ -3,6 +3,7 @@ import "./Style/AdminLogin.css";
 import Navbar from "../../components/Navbar/Navbar";
 import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
 
 // Authentication hook
 import useAuth from "../../hooks/useAuth";
@@ -65,51 +66,71 @@ const AdminLogin = () => {
       setErrorMessage("Please fill in all fields.");
     } else {
       // Simulating server-side validation and error handling
-      if (email === "admin@example.com"  || email === "csc@admin.com" && password === "password") {
-        // Successful login
-        console.log("Login successful");
-        setAuth({
-          username: "Grace",
-          accessToken: 2468,
-        });
-        // navigates to dashboard
-        navigate(from, { replace: true });
-        // Reset form fields and error message
-        setEmail("");
-        setPassword("");
-        setErrorMessage("");
-      } else {
-        // Login failed - incorrect email or password
-        setErrorMessage("Invalid email or password.");
-      }
+      // if (email === "admin@example.com"  || email === "csc@admin.com" && password === "password") {
+      //   // Successful login
+      //   console.log("Login successful");
+      //   setAuth({
+      //     username: "Grace",
+      //     accessToken: 2468,
+      //   });
+      //   // navigates to dashboard
+      //   navigate(from, { replace: true });
+      //   // Reset form fields and error message
+      //   setEmail("");
+      //   setPassword("");
+      //   setErrorMessage("");
+      // } else {
+      //   // Login failed - incorrect email or password
+      //   setErrorMessage("Invalid email or password.");
+      // }
 
       // Integrating backend post request for login
-      // try {
-      //   const response = await axios.post(
-      //     "https://result-backend.onrender.com/adminLogin",
-      //     {
-      //       email,
-      //       password,
-      //     }
-      //   );
-      //   console.log(response);
-      //   if (response.data.success) {
-      //     setAuth({
-      //       username: response.data.admin.name,
-      //       accessToken: response.data.accessToken,
-      //     });
-      //     // navigates to dashboard
-      //     navigate(from, { replace: true });
-      //     // Reset form fields and error message
-      //     setEmail("");
-      //     setPassword("");
-      //     setErrorMessage("");
-      //   } else {
-      //     setErrorMessage(response.data.message);
-      //   }
-      // } catch (error) {
-      //   console.log(error);
-      // }
+      try {
+        const response = await axios.post(
+          "https://result-backend.onrender.com/adminLogin",
+          {
+            email,
+            password,
+          }
+        );
+        console.log(response);
+        if (response.status === 200) {
+          toast.success(response.data.message, {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+          setAuth({
+            username: email,
+            accessToken: Math.floor(Math.random() * 100000000000000) + 1,
+          });
+          // navigates to dashboard
+          navigate(from, { replace: true });
+          // Reset form fields and error message
+          setEmail("");
+          setPassword("");
+          setErrorMessage("");
+        } else {
+          setErrorMessage(response.data.message);
+        }
+      } catch (error) {
+        console.log(error);
+        toast.error(error.response.data.error, {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+      }
     }
   };
 
@@ -158,7 +179,8 @@ const AdminLogin = () => {
               </NavLink>
             </div>
           </form>
-          <button className="action-button"
+          <button
+            className="action-button"
             onClick={(e) => {
               handleSubmit(e);
             }}
@@ -166,13 +188,14 @@ const AdminLogin = () => {
             LOGIN
           </button>
           <div className="card-form-p">
-              <p>
-                Don't have an account?{" "}
-                <NavLink to="/admin/register">Register</NavLink>
-              </p>
-            </div>
+            <p>
+              Don't have an account?{" "}
+              <NavLink to="/admin/register">Register</NavLink>
+            </p>
+          </div>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };
