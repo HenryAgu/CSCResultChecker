@@ -7,7 +7,6 @@ import "./style/student.css";
 import { FiUpload } from "react-icons/fi";
 
 // images
-import AddStudentImage from "./images/AddStudent.png";
 import UpdateStudentImage from "./images/UpdateStudent.png";
 import deleteStudentImage from "./images/DeleteAdmin.png";
 import DeleteStudent from "./DeleteStudent";
@@ -49,10 +48,6 @@ const Students = () => {
           style={{ display: "flex" }}
         >
           <div className="carddivs course_carddivs" onClick={handleAdd}>
-            <div className="course_cards add_course">
-              <img src={AddStudentImage} alt="Add student" />
-              <h2>Add new student</h2>
-            </div>
           </div>
           <div className="carddivs course_carddivs" onClick={handleDelete}>
             <div className="course_cards add_course">

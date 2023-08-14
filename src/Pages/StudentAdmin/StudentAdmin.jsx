@@ -9,7 +9,6 @@ import { FiUpload } from "react-icons/fi";
 
 // images
 import AddAdminImage from "./images/AddAdmin.png";
-import DeleteAdminImage from "./images/DeleteAdmin.png";
 import ViewAdminsImage from "./images/ViewAdmins.png";
 
 
@@ -54,10 +53,6 @@ const StudentAdmin = () => {
             <div className="course_cards add_admin" onClick={handleAdd}>
               <img src={AddAdminImage} alt="Add Admin" />
               <h2>Add an admin</h2>
-            </div>
-            <div className="course_cards delete_admin" onClick={handleUpdate}>
-              <img src={DeleteAdminImage} alt="UpdateAdmin" />
-              <h2>Update admin info</h2>
             </div>
             <div className="course_cards view_admin" onClick={handleView}>
               <img src={ViewAdminsImage} alt="UpdateAdmin" />

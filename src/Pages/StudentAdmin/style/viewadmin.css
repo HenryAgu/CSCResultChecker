@@ -1,6 +1,7 @@
 .main_view{
     margin: 20px;
     position: relative;
+    z-index: 1;
 }
 
   table {
@@ -36,14 +37,9 @@
   }
 
 
-  /* modal */
-.modal{
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  z-index: 30;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* update_admin_form */
+.update_admin_form{
+  width: 60%;
+  height: fit-content;
+  margin: 0 auto;
 }
-

@@ -37,12 +37,12 @@ const Result = () => {
           <div className="resultdivs result_carddivs" onClick={handleClick}>
             <div className="result_cards add_result">
               <img src={ManualImage} alt="Manual" />
-              <h2>Add new Result</h2>
+              <h2>Add Result Manually</h2>
             </div>
           </div>
           <div className="result_cards Excel_form update_result" onClick={Click2}>
             <img src={ExcelImage} alt="Excel" />
-            <h2>Enter Result Sheet</h2>
+            <h2>Upload Result Using Excel</h2>
           </div>
           <NavLink to="/admin/results">
             <div className="result_cards Excel_form update_result">
