@@ -88,7 +88,7 @@ body {
 
 .uploaded-file {
   width: 70vw;
-  height: 100vh;
+  height: fit-content;
   margin-top: 20px;
   text-align: center;
 }

@@ -147,8 +147,8 @@ const Check = () => {
               <input type="name" placeholder="Matriculation Number" required />
             </div>
             <div className="inner_form inner_check_form">
-              <label htmlFor="">Enter Your School Email:</label>
-              <input type="email" placeholder="Valid School Email" required />
+              <label htmlFor="">Enter Secret Key:</label>
+              <input type="text" placeholder="Enter secret key sent to mail" required />
             </div>
             <div className="check_button">
               <button>

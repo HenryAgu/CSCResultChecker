@@ -103,21 +103,21 @@ const CsvResult = ({ page, setPage }) => {
   console.log(matNo);
 
   const sendData = () => {
-    toast.success("Result Uploaded!", {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-    });
     setError(false)
       if (gradeData.length === 0 && matNo === ''){
         setError(true)
       } else{
         console.log('value')
+        toast.success("Result Uploaded!", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
       // const response = axios
     //     .post(URL, formBody)
     //     .then((res) => {

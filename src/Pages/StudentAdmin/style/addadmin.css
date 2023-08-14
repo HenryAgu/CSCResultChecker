@@ -10,13 +10,14 @@
 }
 
 .sAdminform{
+    height: fit-content;
     margin: 10px 0;
     padding: 10px;
 }
 
 .sAdminCard{
     margin-top: 20px;
-    height: 70vh;
+    height: fit-content;
     padding: 10px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
