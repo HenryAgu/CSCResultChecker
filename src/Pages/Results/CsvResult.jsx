@@ -189,7 +189,7 @@ const CsvResult = ({ page, setPage }) => {
             </p>
           )}
         </div>
-        {/* {uploadedData && (
+        {uploadedData && (
           <div className="uploaded-file">
             <p>File Uploaded:</p>
             <table>
@@ -211,7 +211,7 @@ const CsvResult = ({ page, setPage }) => {
               </tbody>
             </table>
           </div>
-        )} */}
+        )} 
       </div>
       {error ? <div className='excelErr'><p>Please upload an excel sheet</p></div>: null}
       <button className='excelSendButton' onClick={sendDataToBackend}><span>Send Uploaded File</span><BsFillSendFill className="send_button"/></button>
