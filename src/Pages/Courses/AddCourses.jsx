@@ -16,14 +16,164 @@ const AddCourses = ({ page, setPage }) => {
     creditUnits: 0,
   });
 
+  // const [yearOneResult, setYearOneResult] = useState([
+  //   {
+  //     code: "GES 100.1",
+  //     name: "Communication skills in English",
+  //     subjectNumber: 100.1,
+  //     levelNumber: 1,
+  //     semesterNumber: 1,
+  //     creditUnits: 3
+  //   },
+  //   {
+  //     code: "GES 102.1",
+  //     name: "Introduction to Philosophy and Logic",
+  //     subjectNumber: 102.1,
+  //     levelNumber: 1,
+  //     semesterNumber: 1,
+  //     creditUnits: 2
+  //   },
+  //   {
+  //     code: "MTH 110.1",
+  //     name: "Algebra and Trigonometry",
+  //     subjectNumber: 110.1,
+  //     levelNumber: 1,
+  //     semesterNumber: 1,
+  //     creditUnits: 3
+  //   },
+  //   {
+  //     code: "MTH 120.1",
+  //     name: "Calculus",
+  //     subjectNumber: 100.1,
+  //     levelNumber: 1,
+  //     semesterNumber: 1,
+  //     creditUnits: 3
+  //   },
+  //   {
+  //     code: "PHY 101.1",
+  //     name: "Mechanics and Properties of Matter",
+  //     subjectNumber: 101.1,
+  //     levelNumber: 1,
+  //     semesterNumber: 1,
+  //     creditUnits: 3
+  //   },
+  //   {
+  //     code: "PHY 102.1",
+  //     name: "Laboratory Practices",
+  //     subjectNumber: 102.1,
+  //     levelNumber: 1,
+  //     semesterNumber: 1,
+  //     creditUnits: 1
+  //   },
+  //   {
+  //     code: "CSC 180.1",
+  //     name: "Introduction to Computer Science and Basic Programming",
+  //     subjectNumber: 180.1,
+  //     levelNumber: 1,
+  //     semesterNumber: 1,
+  //     creditUnits: 2
+  //   },
+  //   {
+  //     code: "CHM 130.1",
+  //     name: "General Chemistry I",
+  //     subjectNumber: 130.1,
+  //     levelNumber: 1,
+  //     semesterNumber: 1,
+  //     creditUnits: 3
+  //   },
+  //   {
+  //     code: "FSB 101.1",
+  //     name: "GeneralBiology I",
+  //     subjectNumber: 101.1,
+  //     levelNumber: 1,
+  //     semesterNumber: 1,
+  //     creditUnits: 3
+  //   },
+  //   {
+  //     code: "GES.101.2",
+  //     name: "Computer Appreciation and Application",
+  //     subjectNumber: 101.2,
+  //     levelNumber: 1,
+  //     semesterNumber: 2,
+  //     creditUnits: 2
+  //   },
+  //   {
+  //     code: "CSC 182.2",
+  //     name: "Computer Application",
+  //     subjectNumber: 182.1,
+  //     levelNumber: 1,
+  //     semesterNumber: 2,
+  //     creditUnits: 2
+  //   },
+  //   {
+  //     code: "CSC 183.2",
+  //     name: "Introduction to Problem Solving",
+  //     subjectNumber: 183.2,
+  //     levelNumber: 1,
+  //     semesterNumber: 2,
+  //     creditUnits: 2
+  //   },
+  //   {
+  //     code: "MTH 114.2",
+  //     name: "Introduction to Logic and Numbers",
+  //     subjectNumber: 114.2,
+  //     levelNumber: 1,
+  //     semesterNumber: 2,
+  //     creditUnits: 3
+  //   },
+  //   {
+  //     code: "MTH 124.2",
+  //     name: "Coordinate Geometry",
+  //     subjectNumber: 124.2,
+  //     levelNumber: 1,
+  //     semesterNumber: 2,
+  //     creditUnits: 3
+  //   },
+  //   {
+  //     code: "GES 103.2",
+  //     name: "Nigerian Peoples and Culture",
+  //     subjectNumber: 103.2,
+  //     levelNumber: 1,
+  //     semesterNumber: 2,
+  //     creditUnits: 2
+  //   },
+  //   {
+  //     code: "PHY 112.2",
+  //     name: "Introduction to Electricity and Magnetism",
+  //     subjectNumber: 112.2,
+  //     levelNumber: 1,
+  //     semesterNumber: 2,
+  //     creditUnits: 3
+  //   },
+  //   {
+  //     code: "PHY 103.2",
+  //     name: "Laboratory Practices II",
+  //     subjectNumber: 103.2,
+  //     levelNumber: 1,
+  //     semesterNumber: 2,
+  //     creditUnits: 1
+  //   },
+  //   {
+  //     code: "STA 160.2",
+  //     name: "Descriptive Statistics",
+  //     subjectNumber: 160.2,
+  //     levelNumber: 1,
+  //     semesterNumber: 2,
+  //     creditUnits: 3
+  //   },
+    
+  // ]);
+
   const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    
     const validationErrors = validateForm();
     if (Object.keys(validationErrors).length === 0) {
       // Form validation passed, submit the form

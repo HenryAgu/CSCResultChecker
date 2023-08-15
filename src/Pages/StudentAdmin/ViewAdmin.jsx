@@ -71,7 +71,6 @@ const ViewAdmin = ({ page, setPage }) => {
     lastName: "",
     middleName: "",
     email: "",
-    password: "",
     adminNumber: "",
   });
 
@@ -93,9 +92,9 @@ const ViewAdmin = ({ page, setPage }) => {
             firstName: formData.firstName,
             lastName: formData.lastName,
             middleName: formData.middleName,
-            password: formData.password,
+            admin: formData.password,
             email: formData.email,
-            // adminNumber: updateID,
+            adminNumber: updateID,
           })
           .then((response) => {
             console.log(response);
@@ -157,8 +156,8 @@ const ViewAdmin = ({ page, setPage }) => {
     if (!formData.email) {
       errors.email = "Email is required";
     }
-    if (!formData.password) {
-      errors.password = "Password is required";
+    if (!formData.adminNumber) {
+      errors.adminNumber = "Admin Number is required";
     }
     return errors;
   };
@@ -318,18 +317,18 @@ const ViewAdmin = ({ page, setPage }) => {
                 />
               </div>
               <label>
-                <div className="sAdminStyle">Password:</div>
+                <div className="sAdminStyle">Admin Number:</div>
               </label>
-              {errors.password && (
-                <span className="error">{errors.password}</span>
+              {errors.adminNumber && (
+                <span className="error">{errors.adminNumber}</span>
               )}
               <div className="sAdminInputTab">
                 <input
                   className="sAdminInput"
                   type="password"
-                  placeholder="Enter admin password"
-                  name="password"
-                  value={formData.password}
+                  placeholder="Enter admin mumber"
+                  name="adminNumber"
+                  value={formData.adminNumber}
                   onChange={handleChange}
                   required
                 />

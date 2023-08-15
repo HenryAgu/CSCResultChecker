@@ -10,12 +10,76 @@ import { GiCancel } from "react-icons/gi";
 
 // Nav link
 import { NavLink } from "react-router-dom";
+import axios from 'axios';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Check = () => {
   const [show, setShow] = useState(true);
   const [hide, setHide] = useState(false);
+  const [isError, setError] = useState('');
+  const [matNum, setNum] = useState('');
+  const [results, setResults] = useState([])
+  
+  const [formBody, setFormBody] = useState({
+    matNo: "",
+    secretValue: ""
+  });
 
-  // Result data
+  const URL = "https://result-backend.onrender.com/studentLogin";
+  const handleInputChange = (event) => {
+    
+    const { name, value } = event.target;
+    setFormBody((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  console.log(formBody);
+  const resultChecker = async (event) => {
+    event.preventDefault();
+    setError('')
+    const response = axios
+          .post(URL, formBody)
+          .then((res) => {
+            console.log(res.data.message);
+            toast.success(res.data.message, {
+              position: "top-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+            });
+            const matVal = formBody.matNo.toUpperCase()
+            setNum(matVal)
+            const gradeData = axios.post('https://result-backend.onrender.com/Grade',{matNo: matVal})
+            .then((res) => {
+              console.log(res.data.data)
+              setResults(res.data.data)
+            })
+            setShow(false);
+            setHide(true);
+          })
+          .catch(error => {
+            if (error.response.status === 400){
+              if(typeof error.response.data === 'string'){
+                setError(error.response.data)
+              } else if (typeof error.response.data === 'object' && error.response.data.message){
+                setError(error.response.data.message)
+              }
+            } else {
+              setError('An error occured')
+            }
+            console.log(error)
+          });
+    
+  }
+  console.log(results)
+//  Result data
 
   // year one first semester
   const yearOneFirst = [
@@ -109,7 +173,7 @@ const Check = () => {
   ];
 
   // year four second semester
-  const yearFourSecond = [
+  const yearFourSecond =[
     { id: 1, course: "csc 180.1", score: 25, grade: "A" },
     { id: 2, course: "ges 100.1", score: 30, grade: "A" },
     { id: 3, course: "ges 102.1", score: 35, grade: "A" },
@@ -122,17 +186,21 @@ const Check = () => {
   ];
 
   // result checker function
-  const resultChecker = (event) => {
-    event.preventDefault();
-    setShow(false);
-    setHide(true);
-  };
+  // const resultChecker = (event) => {
+  //   event.preventDefault();
+   
+  // };
 
   // hide result container
   const hideResult = () => {
     setShow(true);
     setHide(false);
   };
+
+  const inline = {
+    color:"red",
+    fontSize: '20px'
+  }
 
   return (
     <main className="check">
@@ -144,12 +212,13 @@ const Check = () => {
           <form action="" className="check_form" onSubmit={resultChecker}>
             <div className="inner_form inner_check_form">
               <label htmlFor="">Enter Your Mat Number:</label>
-              <input type="name" placeholder="Matriculation Number" required />
+              <input type="name" name="matNo" placeholder="Matriculation Number" onChange={handleInputChange} required/>
             </div>
             <div className="inner_form inner_check_form">
               <label htmlFor="">Enter Secret Key:</label>
-              <input type="text" placeholder="Enter secret key sent to mail" required />
+              <input type="text" name="secretValue" placeholder="Enter secret key sent to mail" onChange={handleInputChange}required />
             </div>
+            {isError ? <div style={inline}> {isError} </div> : null}
             <div className="check_button">
               <button>
                 Check <BiSearchAlt style={{ fontSize: "20px" }} />
@@ -178,7 +247,7 @@ const Check = () => {
             <tbody>
               <tr>
                 <td>MAT NUMBER:</td>
-                <td>U2018/5570000</td>
+                <td>{matNum}</td>
               </tr>
               <tr>
                 <td>NAME:</td>
@@ -193,18 +262,18 @@ const Check = () => {
             <thead>
               <tr>
                 <th>COURSE CODE</th>
-                <th>SCORE</th>
+                <th>Course description</th>
                 <th>GRADE</th>
               </tr>
             </thead>
             <tbody>
-              {yearOneFirst.map((item) => (
-                <tr key={item.id}>
-                  <td>{item.course}</td>
-                  <td>{item.score}</td>
-                  <td style={{color: item.grade === "F" || item.grade === "f" ? "red": "black"}}>{item.grade}</td>
+              {Array.isArray(results) && results.map((item) => (
+                ((item.levelNumber === 1 && item.semesterNumber === 1)) && (<tr key={item.id}>
+                  <td>{item.courseCode}</td>
+                  <td>{item.courseName}</td>
+                  <td style={{color: item.gradeValue === "F" || item.gradeValue === "f" ? "red": "black"}}>{item.gradeValue}</td>
                 </tr>
-              ))}
+              )))}
             </tbody>
           </table>
           <div className="gpa">
@@ -217,18 +286,18 @@ const Check = () => {
             <thead>
               <tr>
                 <th>COURSE CODE</th>
-                <th>SCORE</th>
+                <th>Course description</th>
                 <th>GRADE</th>
               </tr>
             </thead>
             <tbody>
-              {yearOneSecond.map((item) => (
-                <tr key={item.id}>
-                  <td>{item.course}</td>
-                  <td>{item.score}</td>
-                  <td>{item.grade}</td>
+              {Array.isArray(results) && results.map((item) => (
+                ((item.levelNumber === 1 && item.semesterNumber === 2)) && (<tr key={item.id}>
+                  <td>{item.courseCode}</td>
+                  <td>{item.courseName}</td>
+                  <td>{item.gradeValue}</td>
                 </tr>
-              ))}
+              )))}
             </tbody>
           </table>
           <div className="gpa">
@@ -241,18 +310,18 @@ const Check = () => {
             <thead>
               <tr>
                 <th>COURSE CODE</th>
-                <th>SCORE</th>
+                <th>Course description</th>
                 <th>GRADE</th>
               </tr>
             </thead>
             <tbody>
-              {yearTwoFirst.map((item) => (
-                <tr key={item.id}>
-                  <td>{item.course}</td>
-                  <td>{item.score}</td>
-                  <td>{item.grade}</td>
+              {Array.isArray(results) && results.map((item) => (
+                ((item.levelNumber === 2 && item.semesterNumber === 1)) && (<tr key={item.id}>
+                  <td>{item.courseCode}</td>
+                  <td>{item.coursename}</td>
+                  <td>{item.gradeValue}</td>
                 </tr>
-              ))}
+              )))}
             </tbody>
           </table>
           <div className="gpa">
@@ -265,18 +334,18 @@ const Check = () => {
             <thead>
               <tr>
                 <th>COURSE CODE</th>
-                <th>SCORE</th>
+                <th>Course descript</th>
                 <th>GRADE</th>
               </tr>
             </thead>
             <tbody>
-              {yearTwoSecond.map((item) => (
-                <tr key={item.id}>
-                  <td>{item.course}</td>
-                  <td>{item.score}</td>
-                  <td>{item.grade}</td>
+              {Array.isArray(results) && results.map((item) => (
+                ((item.levelNumber === 2 && item.semesterNumber === 2)) && (<tr key={item.id}>
+                  <td>{item.courseCode}</td>
+                  <td>{item.courseName}</td>
+                  <td>{item.gradeValue}</td>
                 </tr>
-              ))}
+              )))}
             </tbody>
           </table>
           <div className="gpa">
@@ -289,18 +358,18 @@ const Check = () => {
             <thead>
               <tr>
                 <th>COURSE CODE</th>
-                <th>SCORE</th>
+                <th>Course descript</th>
                 <th>GRADE</th>
               </tr>
             </thead>
             <tbody>
-              {yearThreeFirst.map((item) => (
-                <tr key={item.id}>
-                  <td>{item.course}</td>
-                  <td>{item.score}</td>
-                  <td>{item.grade}</td>
+              {Array.isArray(results) && results.map((item) => (
+                ((item.levelNumber === 3 && item.semesterNumber === 1)) && (<tr key={item.id}>
+                  <td>{item.courseCode}</td>
+                  <td>{item.courseName}</td>
+                  <td>{item.gradeValue}</td>
                 </tr>
-              ))}
+              )))}
             </tbody>
           </table>
           <div className="gpa">
@@ -313,18 +382,18 @@ const Check = () => {
             <thead>
               <tr>
                 <th>COURSE CODE</th>
-                <th>SCORE</th>
+                <th>Course description</th>
                 <th>GRADE</th>
               </tr>
             </thead>
             <tbody>
-              {yearThreeSecond.map((item) => (
-                <tr key={item.id}>
-                  <td>{item.course}</td>
-                  <td>{item.score}</td>
-                  <td>{item.grade}</td>
+              {Array.isArray(results) && results.map((item) => (
+                ((item.levelNumber === 3 && item.semesterNumber === 2)) && (<tr key={item.id}>
+                  <td>{item.courseCode}</td>
+                  <td>{item.courseName}</td>
+                  <td>{item.gradeValue}</td>
                 </tr>
-              ))}
+              )))}
             </tbody>
           </table>
           <div className="gpa">
@@ -337,18 +406,18 @@ const Check = () => {
             <thead>
               <tr>
                 <th>COURSE CODE</th>
-                <th>SCORE</th>
+                <th>Course description</th>
                 <th>GRADE</th>
               </tr>
             </thead>
             <tbody>
-              {yearFourFirst.map((item) => (
-                <tr key={item.id}>
-                  <td>{item.course}</td>
-                  <td>{item.score}</td>
-                  <td>{item.grade}</td>
+              {Array.isArray(results) && results.map((item) => (
+                ((item.levelNumber === 4 && item.semesterNumber === 1)) && (<tr key={item.id}>
+                  <td>{item.courseCode}</td>
+                  <td>{item.courseName}</td>
+                  <td>{item.gradeValue}</td>
                 </tr>
-              ))}
+              )))}
             </tbody>
           </table>
           <div className="gpa">
@@ -361,18 +430,18 @@ const Check = () => {
             <thead>
               <tr>
                 <th>COURSE CODE</th>
-                <th>SCORE</th>
+                <th>Course description</th>
                 <th>GRADE</th>
               </tr>
             </thead>
             <tbody>
-              {yearFourSecond.map((item) => (
-                <tr key={item.id}>
-                  <td>{item.course}</td>
-                  <td>{item.score}</td>
-                  <td>{item.grade}</td>
+              {Array.isArray(results) && results.map((item) => (
+                ((item.levelNumber === 4 && item.semesterNumber === 2)) && (<tr key={item.id}>
+                  <td>{item.courseCode}</td>
+                  <td>{item.courseName}</td>
+                  <td>{item.gradeValue}</td>
                 </tr>
-              ))}
+              )))}
             </tbody>
           </table>
           <div className="gpa">
@@ -393,6 +462,7 @@ const Check = () => {
       ) : (
         true
       )}
+    <ToastContainer/>  
     </main>
   );
 };

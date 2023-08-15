@@ -14,13 +14,19 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const CsvResult = ({ page, setPage }) => {
   const [uploadedData, setUploadedData] = useState(null);
-  const [matNo, setMatNo] = useState('')
+  const [matNo, setMatNo] = useState('');
+  const [academicYear, setYear] = useState(0);
   const [gradeData, setGradeData] = useState([]);
   const [error, setError] = useState(false);
+  const [formBody, setFormBody] = useState([])
 
   const URL = 'http://localhost:4000/results'
 
   const handleFileUpload = (acceptedFiles) => {
+    setMatNo('')
+    setYear(0)
+    setGradeData([])
+    setFormBody([])
     const file = acceptedFiles[0];
     const reader = new FileReader();
 
@@ -34,40 +40,22 @@ const CsvResult = ({ page, setPage }) => {
       // Convert the sheet to JSON
       const jsonData = XLSX.utils.sheet_to_json(firstSheet);
       const filteredData = jsonData.filter(row => Object.keys(row).length > 3);
-
-
-      const courseInfo = jsonData.slice(3).map((row) => ({
-        rowNumber: jsonData.indexOf(row) + 1,
-        length: row.length,
-        matNo: row[3],
-        courseCode: row[1],
-        courseTitle: row[2],
-        cu: row[4],
-        score: row[6],
-        // ... other relevant columns
-      }));
-
-
       const headers = jsonData[3]; 
 
       // Extract course data
       const courseData = jsonData.slice(9); // Start from row 9
 
       //console.log('Student Information:', studentInfo);
-      console.log('Course Data:', courseData);
-      console.log('Headers:', headers);
-      console.log('MatNo header:', headers.__EMPTY_6)
-
       const matricNumber = headers.__EMPTY_6
 
-      const matNo = matricNumber.split(': ')
+      const imatNo = matricNumber.split(': ')
+       const sMatNo = imatNo[1]
 
-      console.log('My no:',matNo[1])
-      console.log(typeof matNo[1])
+       const year = jsonData[6]
+      const nYear = year.__EMPTY_4
 
-      // const newCourseData = courseData.filter(item => {
-      //   return '__EMPTY' in item && '__EMPTY_1' in item && '__EMPTY_7' in item
-      // })
+      const newYear = nYear.split('/')
+      const aYear = newYear[0]
 
       const newCourseData = courseData.filter(item => {
         return (
@@ -79,54 +67,68 @@ const CsvResult = ({ page, setPage }) => {
       });
       
 
-      const electiveCourseObject = courseData.find(item => {
-        return item['__EMPTY_1'] === 'ELECTIVE COURSES';
-      });
-      
-      console.log('Elective Course Object:', electiveCourseObject);
-      
-      
+      // const electiveCourseObject = courseData.find(item => {
+      //   return item['__EMPTY_1'] === 'ELECTIVE COURSES';
+      // });
+      const dataINeed = newCourseData.map(obj => ({
+        number: obj.__EMPTY,
+        value: obj.__EMPTY_7
+      }))
+    
+      const dataForDatabase = dataINeed.map( obj => ({
+        matNo: sMatNo,
+        academicYear: aYear,
+        gradeValue: obj.value,
+        code: obj.number
+      }))
 
-      console.log('Actual Grade Info:', newCourseData);
-      //console.log('Actual Grade Info Two:', newCourseDataTwo);
-      
-      setMatNo(matNo[1]);
-      setGradeData(newCourseData)
+  console.log(dataForDatabase)
+      //console.log('Actual Grade Info Two:', dataINeed);
       //console.log(courseDataWithMeaningfulKeys)
-
+      
+      
       setUploadedData(jsonData);
+      setYear(aYear);
+      setMatNo(sMatNo);
+      setGradeData(dataINeed)
+      setFormBody(dataForDatabase)
     };
 
-    reader.readAsArrayBuffer(file);;
+    reader.readAsArrayBuffer(file);
   };
   console.log(gradeData);
   console.log(matNo);
+  console.log(formBody.length);
+  
 
-  const sendData = () => {
+  const sendDataToBackend = async () => {
     setError(false)
-      if (gradeData.length === 0 && matNo === ''){
+    try {
+      if (formBody.length === 0 && matNo === ''){
         setError(true)
-      } else{
+      } else {
+        await Promise.all(
+          formBody.map(async (object) => {
+            const response = await axios.post("https://result-backend.onrender.com/results", object);
+          })
+        );
         console.log('value')
-        toast.success("Result Uploaded!", {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-        });
-      // const response = axios
-    //     .post(URL, formBody)
-    //     .then((res) => {
-    //       console.log(res.data);
-    //     })
-    //     .catch((error) => error.response.data);
-    //   console.log(response.data);
+          toast.success("Result Uploaded!", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
       }
-  }
+        
+    } catch (error) {
+      console.error('Error sending data:', error);
+    }
+  };
   
 
   console.log(error)
@@ -187,7 +189,7 @@ const CsvResult = ({ page, setPage }) => {
             </p>
           )}
         </div>
-        {uploadedData && (
+        {/* {uploadedData && (
           <div className="uploaded-file">
             <p>File Uploaded:</p>
             <table>
@@ -209,10 +211,10 @@ const CsvResult = ({ page, setPage }) => {
               </tbody>
             </table>
           </div>
-        )}
+        )} */}
       </div>
       {error ? <div className='excelErr'><p>Please upload an excel sheet</p></div>: null}
-      <button className='excelSendButton' onClick={sendData}><span>Send Uploaded File</span><BsFillSendFill className="send_button"/></button>
+      <button className='excelSendButton' onClick={sendDataToBackend}><span>Send Uploaded File</span><BsFillSendFill className="send_button"/></button>
       <ToastContainer/>
     </>
   );
