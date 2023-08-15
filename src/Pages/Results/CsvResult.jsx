@@ -103,6 +103,16 @@ const CsvResult = ({ page, setPage }) => {
 
   const sendDataToBackend = async () => {
     setError(false)
+    toast.success("Result Uploaded!", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
     try {
       if (formBody.length === 0 && matNo === ''){
         setError(true)
